@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import type { Faq as FaqType } from '@/lib/data';
+import Link from 'next/link';
+import { PLACE_LINKS } from '@/lib/places';
 import { Icon } from '@/components/ui/Icon';
 
 /** Akkordeon. Antworten stehen immer im DOM (grid-rows-Transition), damit FAQPage-Markup den sichtbaren Inhalten entspricht. */
@@ -37,7 +39,28 @@ export function Faq({ items, idPrefix = 'faq', tone = 'dark' }: { items: FaqType
               className={`grid transition-[grid-template-rows] duration-500 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
             >
               <div className="overflow-hidden">
-                <p className={`max-w-[68ch] pb-7 text-[1.02rem] leading-relaxed ${light ? 'text-neutral-600' : 'text-mute'}`}>{f.a}</p>
+                <p className={`max-w-[68ch] text-[1.02rem] leading-relaxed ${light ? 'text-neutral-600' : 'text-mute'} ${f.list ? '' : 'pb-7'}`}>{f.a}</p>
+                {f.list && (
+                  <div className="pb-7 pt-4">
+                    {f.listIntro && <p className="mb-3 text-[0.95rem] font-medium">{f.listIntro}</p>}
+                    <ul className="flex flex-wrap gap-2">
+                      {f.list.map((name) => {
+                        const href = PLACE_LINKS[name];
+                        return (
+                          <li key={name}>
+                            {href ? (
+                              <Link href={href} tabIndex={isOpen ? 0 : -1} className="inline-block rounded-full border border-white/20 px-3.5 py-1.5 text-[0.88rem] transition-colors hover:border-brand hover:text-brand">
+                                {name}
+                              </Link>
+                            ) : (
+                              <span className="inline-block rounded-full border border-white/20 px-3.5 py-1.5 text-[0.88rem]">{name}</span>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </li>

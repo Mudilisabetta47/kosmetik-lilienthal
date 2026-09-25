@@ -15,7 +15,7 @@ import { Reveal } from '@/components/motion/Reveal';
 export const metadata: Metadata = pageMeta({
   title: 'Fahrzeugaufbereitung Bremen | Autoaufbereitung in Lilienthal',
   description:
-    'Fahrzeugaufbereitung für Bremen: Lackaufbereitung, Versiegelung, Innenreinigung und Verkaufsaufbereitung im Studio in Lilienthal – nordöstlich von Bremen. Termin anfragen.',
+    'Fahrzeugaufbereitung für Bremen: ✓ Lackaufbereitung ✓ Innenreinigung ✓ Versiegelung ✓ Verkaufsaufbereitung – Studio Lilienthal. 0152 / 345 510 63',
   path: '/fahrzeugaufbereitung-bremen',
 });
 
@@ -39,7 +39,7 @@ const FAQS: FaqType[] = [
 ];
 
 const HOW = [
-  { t: 'Anfragen', d: 'Per Online-Formular oder telefonisch – mit Leistung, Fahrzeug und Wunschdatum.' },
+  { t: 'Anfragen & anrufen', d: 'Online anfragen und uns danach kurz anrufen – dann stimmen wir Leistung, Termin und Umfang direkt am Telefon ab.' },
   { t: 'Begutachtung', d: 'Wir prüfen den Zustand und nennen Ihnen einen Festpreis.' },
   { t: 'Aufbereitung', d: 'Ihr Fahrzeug wird in unserem Studio in Lilienthal in Handarbeit aufbereitet.' },
 ];

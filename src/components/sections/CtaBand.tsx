@@ -13,10 +13,10 @@ export function CtaBand({ title = 'Bereit für\n*Glanz?*', service }: { title?: 
           <SplitText text={title} />
         </p>
         <Reveal className="max-w-[44ch]">
-          <p className="lede">Wir beraten Sie persönlich und nennen Ihnen nach kurzer Begutachtung einen fairen Preis.</p>
+          <p className="lede">Rufen Sie uns einfach an – wir beraten Sie persönlich und nennen Ihnen nach kurzer Begutachtung einen fairen Preis.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Btn href={service ? `/termin?leistung=${service}` : '/termin'} cursor="Termin">Termin anfragen</Btn>
-            <Btn href={SITE.phoneHref} variant="ghost" icon="phone" cursor="Anrufen">{SITE.phoneDisplay}</Btn>
+            <Btn href={SITE.phoneHref} icon="phone" cursor="Anrufen">{SITE.phoneDisplay}</Btn>
+            <Btn href={service ? `/termin?leistung=${service}` : '/termin'} variant="ghost" cursor="Termin">Termin anfragen</Btn>
           </div>
         </Reveal>
       </div>

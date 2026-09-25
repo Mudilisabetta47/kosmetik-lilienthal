@@ -130,14 +130,14 @@ export function RequestFunnel({ initialService }: { initialService?: string }) {
           <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-bone text-ink">
             <Icon name="check" className="h-8 w-8" />
           </span>
-          <h3 ref={head} tabIndex={-1} className="h3 mt-6 outline-none">Vielen Dank, {f.name.split(' ')[0]}!</h3>
-          <p className="mx-auto mt-4 max-w-[46ch] text-mute">
-            Ihre Anfrage ist bei uns eingegangen. Wir melden uns schnellstmöglich bei Ihnen, um den Termin abzustimmen.
+          <h3 ref={head} tabIndex={-1} className="h3 mt-6 outline-none">Vielen Dank, {f.name.split(' ')[0]} – Ihre Anfrage ist da!</h3>
+          <p className="mx-auto mt-4 max-w-[48ch] text-[1.05rem] text-bone/90">
+            <strong className="font-semibold text-bone">Bitte rufen Sie uns jetzt kurz an.</strong> So stimmen wir Termin, Umfang und Preis direkt mit Ihnen ab – am schnellsten geht das am Telefon.
           </p>
-          <p className="mx-auto mt-3 max-w-[46ch] text-[0.9rem] text-mute">Dringend? Rufen Sie uns an: {SITE.phoneDisplay} (Mo–Fr 8:00–17:00 Uhr).</p>
           <div className="mt-8 flex justify-center">
-            <Btn href={SITE.phoneHref} variant="ghost" icon="phone">Jetzt anrufen</Btn>
+            <Btn href={SITE.phoneHref} icon="phone" cursor="Anrufen" className="!min-h-[60px] !px-9 !text-[1.1rem]">{SITE.phoneDisplay}</Btn>
           </div>
+          <p className="mx-auto mt-5 max-w-[46ch] text-[0.9rem] text-mute">Erreichbar Montag bis Freitag, 8:00–17:00 Uhr · Samstag nach Absprache.</p>
         </div>
       ) : (
         <form onSubmit={submit} noValidate>
@@ -273,7 +273,15 @@ export function RequestFunnel({ initialService }: { initialService?: string }) {
                     </div>
                   </div>
 
-                  <dl className="mt-6 space-y-1.5 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 text-[0.88rem]">
+                  <div className="mt-6 flex items-start gap-3 rounded-2xl border border-brand/40 bg-brand/[0.08] p-4 text-[0.92rem] leading-relaxed">
+                    <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
+                    <p>
+                      <strong className="font-semibold">Nach dem Absenden bitten wir Sie um einen kurzen Anruf</strong> – dann stimmen wir Termin und Preis sofort mit Ihnen ab. Sie können auch gleich anrufen:{' '}
+                      <a href={SITE.phoneHref} className="tabular font-semibold underline underline-offset-4">{SITE.phoneDisplay}</a>
+                    </p>
+                  </div>
+
+                  <dl className="mt-4 space-y-1.5 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 text-[0.88rem]">
                     <div className="flex gap-3"><dt className="w-24 shrink-0 text-mute">Leistung</dt><dd>{chosen.join(', ') || '–'}</dd></div>
                     <div className="flex gap-3"><dt className="w-24 shrink-0 text-mute">Fahrzeug</dt><dd>{f.vehicle || '–'}{f.vehicleType ? ` · ${VEHICLE_TYPES.find((v) => v.id === f.vehicleType)?.label}` : ''}</dd></div>
                     <div className="flex gap-3"><dt className="w-24 shrink-0 text-mute">Wunschdatum</dt><dd>{f.date ? new Date(f.date + 'T12:00:00').toLocaleDateString('de-DE', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }) : 'flexibel'}</dd></div>
@@ -290,7 +298,7 @@ export function RequestFunnel({ initialService }: { initialService?: string }) {
 
                   {status === 'unavailable' && (
                     <div role="alert" className="mt-5 rounded-2xl border border-amber-300/30 bg-amber-300/[0.07] p-4 text-[0.92rem]">
-                      Der Online-Versand ist gerade nicht verfügbar. Bitte rufen Sie uns kurz an – wir vereinbaren Ihren Termin direkt:{' '}
+                      Der Online-Versand ist gerade nicht verfügbar. Bitte rufen Sie uns einfach an – wir vereinbaren Ihren Termin direkt am Telefon:{' '}
                       <a href={SITE.phoneHref} className="font-semibold underline underline-offset-4">{SITE.phoneDisplay}</a>
                     </div>
                   )}

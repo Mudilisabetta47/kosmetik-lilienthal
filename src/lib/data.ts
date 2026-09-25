@@ -53,7 +53,7 @@ export const GROUPS: Record<GroupId, { label: string; title: string; text: strin
   },
 };
 
-export type Faq = { q: string; a: string };
+export type Faq = { q: string; a: string; listIntro?: string; list?: string[] };
 export type Step = { title: string; text: string };
 
 export type Service = {
@@ -98,7 +98,7 @@ export const SERVICES: Service[] = [
     h1: `Lackaufbereitung in Lilienthal – für ${REGION}`,
     metaTitle: 'Lackaufbereitung Lilienthal & Bremen | autokosmetik',
     metaDescription:
-      'Mehrstufige Lackaufbereitung in Lilienthal: Politur, Kratzer- und Hologramm-Entfernung für tiefen Glanz. Für Kunden aus Bremen und Umland. Jetzt Termin anfragen.',
+      'Lackaufbereitung in Lilienthal bei Bremen: ✓ Politur ✓ Kratzer entfernen ✓ Hologramme ✓ tiefer Glanz. Jetzt anrufen: 0152 / 345 510 63',
     lead: 'Mehrstufige Politur gegen Hologramme, Swirls, Kratzer und matte Stellen – für Farbtiefe, die man sieht.',
     intro: [
       'Im Laufe der Jahre verliert jeder Lack an Brillanz: Waschanlagen hinterlassen feine Kratzer, Hologramme und Swirls, die Oberfläche wirkt matt. Bei der Lackaufbereitung arbeiten wir den Lack in mehreren Stufen von Hand und mit Maschine auf.',
@@ -144,9 +144,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 60%',
     heroAlt: 'Schwarzer Mercedes-AMG GT mit Hochglanz-Lack nach der Aufbereitung',
     h1: `Hochglanzversiegelung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Hochglanzversiegelung Auto Lilienthal | ab 250 €',
+    metaTitle: 'Hochglanzversiegelung Lilienthal & Bremen | ab 250 €',
     metaDescription:
-      'Hochglanzversiegelung in Lilienthal ab 250 €: Politur und Lackschutz in einem Arbeitsgang, 6–12 Monate Schutz bei normaler Pflege. Für Bremen und Umland.',
+      'Hochglanzversiegelung Auto in Lilienthal ab 250 €: ✓ Politur + Schutz ✓ 6–12 Monate Lackschutz ✓ Abperleffekt. Termin: 0152 / 345 510 63',
     lead: 'Politur und schützende Versiegelung in einem Arbeitsgang – für gleichmäßigen Hochglanz und sichtbaren Abperleffekt.',
     intro: [
       'Mit unserer Hochglanzversiegelung kombinieren wir Politur und schützende Versiegelung in einem Arbeitsgang. Das Ergebnis ist ein tiefer, gleichmäßiger Glanz, bei dem Wasser sichtbar abperlt.',
@@ -182,16 +182,16 @@ export const SERVICES: Service[] = [
     slug: 'nano-versiegelung',
     group: 'lack',
     name: 'Nano-Versiegelung',
-    short: 'Premium-Lackschutz mit starkem Abperleffekt für 1–3 Jahre – optional mit Felgen und Ozonbehandlung.',
+    short: 'Premium-Schutz für den Lack inkl. Felgenreparatur und Ozonbehandlung möglich – 1–3 Jahre Schutz bei normaler Pflege.',
     priceFrom: 350,
     priceNote: 'ab 350 €',
     img: 'sealAfter',
     imgPosition: '50% 50%',
     heroAlt: 'Wassertropfen perlen von einem nano-versiegelten dunkelblauen Lack ab',
     h1: `Nano-Versiegelung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Nano-Versiegelung Auto Lilienthal | ab 350 €',
+    metaTitle: 'Nano-Versiegelung Lilienthal & Bremen | ab 350 €',
     metaDescription:
-      'Nano-Versiegelung in Lilienthal ab 350 €: 1–3 Jahre Lackschutz mit Abperleffekt. Optional mit Felgenversiegelung und Ozonbehandlung. Für Bremen und Umland.',
+      'Nano-Versiegelung in Lilienthal ab 350 €: ✓ 1–3 Jahre Lackschutz ✓ Abperleffekt ✓ UV- & Streusalzschutz. Jetzt anrufen: 0152 / 345 510 63',
     lead: 'Der langlebigste Lackschutz in unserem Angebot: 1–3 Jahre bei normaler Pflege, mit starkem Abperleffekt.',
     intro: [
       'Die Nano-Versiegelung ist unser Premium-Schutz für den Lack: Sie bildet eine harte, wasserabweisende Schicht, die den Lack vor UV-Strahlung, Vogelkot, Insekten und Streusalz schützt.',
@@ -234,9 +234,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 55%',
     heroAlt: 'Roter Porsche 924 als Liebhaberfahrzeug nach der Aufbereitung',
     h1: `Carnauba-Wachs Versiegelung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Carnauba-Wachs Versiegelung Lilienthal | autokosmetik',
+    metaTitle: 'Carnauba-Wachs Lilienthal & Bremen | autokosmetik',
     metaDescription:
-      'Carnauba-Hartwachs von Hand aufgetragen: warmer, satter Tiefenglanz für Liebhaberfahrzeuge und Oldtimer in Lilienthal. Für Bremen und Umland.',
+      'Carnauba-Wachs in Lilienthal bei Bremen: ✓ warmer Tiefenglanz ✓ Handarbeit ✓ ideal für Oldtimer & Liebhaberfahrzeuge. Anrufen: 0152 / 345 510 63',
     lead: 'Echtes Carnauba-Wachs in mehreren dünnen Schichten von Hand aufgetragen – für warmen, satten Tiefenglanz.',
     intro: [
       'Carnauba ist ein Naturwachs und der Klassiker unter den Lackversiegelungen. Es erzeugt einen warmen, satten Tiefenglanz und schützt den Lack natürlich vor Wasser und UV-Strahlung.',
@@ -275,9 +275,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 50%',
     heroAlt: 'Sauber aufbereiteter Fahrzeuginnenraum mit Lederausstattung',
     h1: `Innenreinigung Auto in Lilienthal – für ${REGION}`,
-    metaTitle: 'Innenreinigung Auto Lilienthal | Innenaufbereitung ab 60 €',
+    metaTitle: 'Innenreinigung Auto Lilienthal & Bremen | ab 60 €',
     metaDescription:
-      'Innenreinigung und Innenaufbereitung in Lilienthal ab 60 €: Aussaugen, Sprühextraktion, Kunststoff- und Lederpflege. Für Kunden aus Bremen und Umland.',
+      'Innenreinigung Auto in Lilienthal ab 60 €: ✓ Aussaugen ✓ Sprühextraktion ✓ Kunststoff & Leder ✓ frischer Innenraum. Anrufen: 0152 / 345 510 63',
     lead: 'Ein Innenraum, der sich wieder gepflegt anfühlt und riecht – gründlich gereinigt bis in die Details.',
     intro: [
       'Eine professionelle Innenreinigung entfernt nicht nur sichtbaren Schmutz, sondern auch Pollen und Staub. Sie umfasst Aussaugen, Kunststoffreinigung, Polster- und Lederbehandlung sowie die Reinigung des Dachhimmels.',
@@ -300,14 +300,14 @@ export const SERVICES: Service[] = [
       { q: 'Werden auch Tierhaare entfernt?', a: 'Ja, mit Spezialwerkzeug und Tiefenreinigung.' },
       {
         q: 'Hilft die Innenreinigung gegen Gerüche?',
-        a: 'Bei frischen Verschmutzungen ja. Bei Rauch- oder Tiergerüchen empfehlen wir zusätzlich die Orsun-Geruchsentfernung.',
+        a: 'Bei frischen Verschmutzungen ja. Bei Rauch- oder Tiergerüchen empfehlen wir zusätzlich die Ozon-Geruchsentfernung.',
       },
       {
         q: 'Wie lange dauert die Innenreinigung?',
         a: 'Eine Standardreinigung dauert 3–5 Stunden, eine intensive Aufbereitung einen ganzen Tag.',
       },
     ],
-    related: ['polster-leder', 'orsun-geruchsentfernung', 'verkaufsaufbereitung'],
+    related: ['polster-leder', 'ozon-geruchsentfernung', 'verkaufsaufbereitung'],
   },
   {
     slug: 'polster-leder',
@@ -320,9 +320,9 @@ export const SERVICES: Service[] = [
     imgPosition: '85% 95%',
     heroAlt: 'Gepflegte Ledersitze im Innenraum eines Fahrzeugs',
     h1: `Polster- & Lederreinigung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Polster- & Lederreinigung Auto Lilienthal | ab 70 €',
+    metaTitle: 'Polster- & Lederreinigung Lilienthal & Bremen | ab 70 €',
     metaDescription:
-      'Polsterreinigung, Lederpflege und Imprägnierung im Fachbetrieb in Lilienthal ab 70 €. Für Kunden aus Bremen, Achim, Verden und Umland.',
+      'Polsterreinigung & Lederpflege in Lilienthal ab 70 €: ✓ Sprühextraktion ✓ Lederpflege ✓ Imprägnierung. Jetzt anrufen: 0152 / 345 510 63',
     lead: 'Sichtbar saubere Sitze, geschmeidiges Leder und eine Imprägnierung, die vor neuen Flecken schützt.',
     intro: [
       'Sitze, Lehnen und Türverkleidungen sind im Alltag am stärksten beansprucht. Wir reinigen Polster per Sprühextraktion mit Spezialreinigern und pflegen Leder schonend, ohne es auszutrocknen.',
@@ -348,25 +348,25 @@ export const SERVICES: Service[] = [
       { q: 'Ist die Lederpflege inklusive?', a: 'Ja, nach der Reinigung tragen wir eine pflegende Lederlotion auf.' },
       { q: 'Wie lange trocknen die Polster?', a: 'Je nach Witterung 2–4 Stunden.' },
     ],
-    related: ['innenreinigung', 'orsun-geruchsentfernung', 'verkaufsaufbereitung'],
+    related: ['innenreinigung', 'ozon-geruchsentfernung', 'verkaufsaufbereitung'],
   },
   {
-    slug: 'orsun-geruchsentfernung',
+    slug: 'ozon-geruchsentfernung',
     group: 'interieur',
-    name: 'Orsun-Geruchsentfernung',
+    name: 'Ozon-Geruchsentfernung',
     short: 'Geruchsneutralisation bei Zigaretten-, Nikotin-, Tier- und Schimmelgeruch – auch in Lüftung und Klimaanlage.',
     priceFrom: 100,
     priceNote: 'ab 100 €',
     img: 'interiorBefore',
     imgPosition: '50% 50%',
     heroAlt: 'Stark beanspruchter Fahrzeuginnenraum vor der Geruchsbehandlung',
-    h1: `Orsun-Geruchsentfernung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Geruchsentfernung Auto Lilienthal | Orsun ab 100 €',
+    h1: `Ozon-Geruchsentfernung in Lilienthal – für ${REGION}`,
+    metaTitle: 'Geruchsentfernung Auto Lilienthal & Bremen | ab 100 €',
     metaDescription:
-      'Orsun-Geruchsentfernung in Lilienthal ab 100 €: Zigaretten-, Nikotin-, Tier- und Schimmelgeruch im Auto neutralisieren. Für Bremen und Umland.',
+      'Ozon-Geruchsentfernung in Lilienthal ab 100 €: ✓ Rauch ✓ Tiergeruch ✓ Muff ✓ auch in Lüftung & Klima. Jetzt anrufen: 0152 / 345 510 63',
     lead: 'Gerüche werden neutralisiert statt überdeckt – gegen Rauch, Tier und Muff, auch in Lüftung und Klimaanlage.',
     intro: [
-      'Orsun ist ein professionelles Verfahren zur Geruchsneutralisation mit Tiefenwirkung in Polstern, Himmel und Verkleidungen. Es richtet sich an alle, deren Fahrzeug hartnäckige Gerüche hat – etwa nach Zigarettenrauch, Nikotin, Tieren oder Feuchtigkeit.',
+      'Die Ozonbehandlung ist ein professionelles Verfahren zur Geruchsneutralisation mit Tiefenwirkung in Polstern, Himmel und Verkleidungen. Sie richtet sich an alle, deren Fahrzeug hartnäckige Gerüche hat – etwa nach Zigarettenrauch, Nikotin, Tieren oder Feuchtigkeit.',
     ],
     benefits: [
       'Wirkt gegen Zigaretten- und Nikotingeruch',
@@ -378,12 +378,12 @@ export const SERVICES: Service[] = [
     steps: [
       { title: 'Innenreinigung', text: 'Gründliche Vorbereitung des Innenraums.' },
       { title: 'Vorbereitung', text: 'Lüftung und Klimaanlage werden für die Behandlung vorbereitet.' },
-      { title: 'Orsun-Anwendung', text: 'Der Wirkstoff verteilt sich im gesamten Innenraum.' },
+      { title: 'Ozon-Anwendung', text: 'Das Ozon verteilt sich im gesamten Innenraum.' },
       { title: 'Auslüften', text: 'Das Fahrzeug bleibt zum Aushärten und Auslüften stehen.' },
     ],
     faqs: [
       {
-        q: 'Was ist Orsun?',
+        q: 'Was ist eine Ozonbehandlung?',
         a: 'Ein professionelles Verfahren zur dauerhaften Geruchsneutralisation mit Tiefenwirkung in Polstern, Himmel und Verkleidungen.',
       },
       {
@@ -405,9 +405,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 55%',
     heroAlt: 'Gelber Lamborghini Huracán vor dem Studio in Lilienthal',
     h1: `Motorwäsche & Motorraumreinigung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Motorwäsche Lilienthal | Motorraumreinigung ab 80 €',
+    metaTitle: 'Motorwäsche Lilienthal & Bremen | Motorraum ab 80 €',
     metaDescription:
-      'Professionelle Motorwäsche in Lilienthal ab 80 €: schonende Motorraumreinigung mit Kunststoffpflege. Für Kunden aus Bremen, Achim, Oyten und Verden.',
+      'Motorwäsche in Lilienthal ab 80 €: ✓ schonende Motorraumreinigung ✓ Kunststoffpflege ✓ sauber abgedeckt. Jetzt anrufen: 0152 / 345 510 63',
     lead: 'Ein sauberer Motorraum – schonend gereinigt, sorgfältig abgedeckt und anschließend gepflegt.',
     intro: [
       'Bei der Motorwäsche werden empfindliche Komponenten zuerst abgeklebt. Spezialprodukte lösen Öl und Fett, gewaschen wird mit kontrolliertem Wasserdruck. Zum Schluss pflegen wir die Kunststoffoberflächen.',
@@ -452,9 +452,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 55%',
     heroAlt: 'Dunkler Porsche Taycan vor dem Aufbereitungsstudio in Lilienthal',
     h1: `Folienentfernung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Folienentfernung Auto Lilienthal | Festpreis nach Begutachtung',
+    metaTitle: 'Folienentfernung Lilienthal & Bremen | Festpreis',
     metaDescription:
-      'Folienentfernung in Lilienthal: Werbe-, Schutz- und Designfolien samt Kleberesten schonend entfernen. Festpreis nach Begutachtung. Für Bremen und Umland.',
+      'Folienentfernung in Lilienthal bei Bremen: ✓ Folie & Kleber rückstandslos ✓ lackschonend ✓ Festpreis nach Begutachtung. Anrufen: 0152 / 345 510 63',
     lead: 'Folie und Kleber rückstandslos entfernt – mit kontrollierter Wärme und ohne Schaden am Lack.',
     intro: [
       'Ob Werbefolie, Schutzfolie oder Designfolie: Wir entfernen sie samt Kleberesten, auch bei älteren, eingebrannten Folierungen. Der Preis hängt vom Umfang ab und wird nach der Begutachtung als Festpreis genannt.',
@@ -493,9 +493,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 50%',
     heroAlt: 'Großes Fahrzeug nach der Komplettaufbereitung vor dem Studio in Lilienthal',
     h1: `Wohnwagen- & Wohnmobil-Aufbereitung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Wohnwagen & Wohnmobil Aufbereitung Lilienthal | autokosmetik',
+    metaTitle: 'Wohnwagen & Wohnmobil Aufbereitung Lilienthal & Bremen',
     metaDescription:
-      'Aufbereitung, Reinigung und Politur für Wohnwagen, Caravan und Wohnmobil in Lilienthal. Festpreis nach kurzer Begutachtung. Für Bremen und Umland.',
+      'Wohnwagen- & Wohnmobil-Aufbereitung in Lilienthal: ✓ schwarze Streifen entfernt ✓ Politur ✓ Festpreis. Jetzt anrufen: 0152 / 345 510 63',
     lead: 'Die Außenhülle wieder strahlend sauber – schwarze Streifen und Algen inklusive.',
     intro: [
       'Caravan, Wohnwagen und Reisemobil sind groß und wetterexponiert. Wir reinigen die Außenhülle gründlich, entfernen schwarze Streifen und Algen und polieren matte Oberflächen auf. Auf Wunsch bereiten wir auch den Innenraum auf.',
@@ -538,9 +538,9 @@ export const SERVICES: Service[] = [
     imgPosition: '50% 55%',
     heroAlt: 'Weißes BMW M850i Cabrio nach der Verkaufsaufbereitung',
     h1: `Verkaufsaufbereitung in Lilienthal – für ${REGION}`,
-    metaTitle: 'Verkaufsaufbereitung Auto Lilienthal | ab 260 €',
+    metaTitle: 'Verkaufsaufbereitung Auto Lilienthal & Bremen | ab 260 €',
     metaDescription:
-      'Verkaufsaufbereitung in Lilienthal ab 260 €: Außenreinigung, Lackpflege, Innenreinigung und Finish für Privatverkauf, Händlerabgabe oder Leasingrückgabe.',
+      'Verkaufsaufbereitung in Lilienthal ab 260 €: ✓ Außen ✓ Innen ✓ Lackpflege ✓ Finish – für Verkauf & Leasingrückgabe. Anrufen: 0152 / 345 510 63',
     lead: 'Ihr Fahrzeug zeigt sich von seiner besten Seite – innen wie außen, Detail für Detail.',
     intro: [
       'Die Verkaufsaufbereitung ist unser Komplettpaket für Privatverkauf, Händlerabgabe oder Leasingrückgabe. Sie umfasst Außenwäsche, Felgenreinigung, Lackpflege, intensive Innenreinigung sowie kleine Korrekturen. Optionale Zusatzleistungen besprechen wir mit Ihnen.',
@@ -658,7 +658,7 @@ export const COMPARE_BY_SLUG: Record<string, 'lack' | 'innenraum' | 'versiegelun
   'carnauba-wachs': 'versiegelung',
   innenreinigung: 'innenraum',
   'polster-leder': 'innenraum',
-  'orsun-geruchsentfernung': 'innenraum',
+  'ozon-geruchsentfernung': 'innenraum',
 };
 
 /** Zusatzbilder (echte Fahrzeuge) je Leistung für die Detailseiten. */
@@ -669,7 +669,7 @@ export const EXTRA_IMAGES: Record<string, string[]> = {
   'carnauba-wachs': ['porsche924Seite', 'mustang'],
   innenreinigung: ['cCabrio', 'rangeRover'],
   'polster-leder': ['m850iSeite', 'g63Front'],
-  'orsun-geruchsentfernung': ['x6', 'g63HeckShop'],
+  'ozon-geruchsentfernung': ['x6', 'g63HeckShop'],
   motorwaesche: ['porsche911Turbo', 'lambo'],
   folienentfernung: ['mustang', 'porsche997Heck'],
   'wohnwagen-aufbereitung': ['g63HeckShop', 'rangeRover'],
@@ -783,7 +783,13 @@ export const HOME_FAQS: Faq[] = [
   },
   {
     q: 'In welchen Orten rund um Lilienthal sind Sie tätig?',
-    a: 'Unser Studio liegt in der Falkenberger Landstraße in Lilienthal, verkehrsgünstig zwischen Bremen und Osterholz-Scharmbeck. Wir betreuen Privatkunden, Geschäftskunden und Autohändler aus der gesamten Region, unter anderem aus Lilienthal, Osterholz-Scharmbeck, Bremen, Worpswede, Ritterhude, Grasberg, Schwanewede, Lemwerder, Achim, Oyten, Ottersberg, Tarmstedt, Delmenhorst, Stuhr, Weyhe, Syke, Verden, Rotenburg und Zeven.',
+    a: 'Unser Standort in der Falkenberger Landstraße in Lilienthal liegt direkt im Landkreis Osterholz und ist verkehrsgünstig zwischen Bremen und Osterholz-Scharmbeck erreichbar. Wir betreuen Privatkunden, Geschäftskunden und Autohändler aus der gesamten Region.',
+    listIntro: 'Wir sind für Sie da in:',
+    list: ['Lilienthal', 'Osterholz-Scharmbeck', 'Bremen', 'Worpswede', 'Ritterhude', 'Grasberg', 'Schwanewede', 'Lemwerder', 'Achim', 'Oyten', 'Ottersberg', 'Tarmstedt', 'Delmenhorst', 'Stuhr', 'Weyhe', 'Syke', 'Verden', 'Rotenburg', 'Zeven'],
+  },
+  {
+    q: 'Wie vereinbare ich einen Termin?',
+    a: 'Am schnellsten telefonisch unter 0152 / 345 510 63 (Montag bis Freitag 8:00–17:00 Uhr, Samstag nach Absprache). Sie können auch die Online-Terminanfrage nutzen – rufen Sie uns danach bitte kurz an, dann stimmen wir Termin, Umfang und Preis direkt ab.',
   },
   {
     q: 'Wo finde ich die Autokosmetik in Lilienthal?',
@@ -791,7 +797,7 @@ export const HOME_FAQS: Faq[] = [
   },
   {
     q: 'Was kostet eine professionelle Autoaufbereitung?',
-    a: 'Unsere Leistungen starten ab 60 € (Innenaufbereitung). Weitere Beispiele: Polster & Leder ab 70 €, Motorwäsche ab 80 €, Orsun-Geruchsentfernung ab 100 €, Hochglanzversiegelung ab 250 €, Verkaufsaufbereitung ab 260 € und Nano-Versiegelung ab 350 €. Alle Preise gelten für ein Fahrzeug der Mittelklasse in normal verschmutztem Zustand; für Großraumlimousinen und Geländewagen berechnen wir +20 %, für Transporter +40 %. Ihr konkretes Angebot erhalten Sie nach kurzer Begutachtung.',
+    a: 'Unsere Leistungen starten ab 60 € (Innenaufbereitung). Weitere Beispiele: Polster & Leder ab 70 €, Motorwäsche ab 80 €, Ozon-Geruchsentfernung ab 100 €, Hochglanzversiegelung ab 250 €, Verkaufsaufbereitung ab 260 € und Nano-Versiegelung ab 350 €. Alle Preise gelten für ein Fahrzeug der Mittelklasse in normal verschmutztem Zustand; für Großraumlimousinen und Geländewagen berechnen wir +20 %, für Transporter +40 %. Ihr konkretes Angebot erhalten Sie nach kurzer Begutachtung.',
   },
   {
     q: 'Wie lange dauert eine Aufbereitung?',

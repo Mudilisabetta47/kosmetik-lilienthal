@@ -13,6 +13,11 @@ const nextConfig = {
     imageSizes: [96, 160, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 365,
   },
+  async redirects() {
+    return [
+      { source: '/leistungen/orsun-geruchsentfernung', destination: '/leistungen/ozon-geruchsentfernung', permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

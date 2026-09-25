@@ -9,9 +9,9 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import { Reveal } from '@/components/motion/Reveal';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Galerie: aufbereitete Fahrzeuge aus Lilienthal | autokosmetik',
+  title: 'Galerie: Fahrzeugaufbereitung Lilienthal & Bremen | autokosmetik',
   description:
-    'Echte Kundenfahrzeuge aus unserem Studio in Lilienthal: Porsche, Mercedes-AMG, BMW, Lamborghini, Ford Mustang nach Lackaufbereitung und Versiegelung.',
+    'Echte Fahrzeuge aus dem Studio in Lilienthal: ✓ Porsche ✓ Mercedes-AMG ✓ BMW ✓ Lamborghini ✓ Ford Mustang nach Lack- und Komplettaufbereitung.',
   path: '/galerie',
 });
 

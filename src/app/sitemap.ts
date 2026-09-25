@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { SERVICES, SITE, STATIC_ROUTES } from '@/lib/data';
+import { PLACES } from '@/lib/places';
 
 const LEGAL = new Set(['/impressum', '/datenschutz']);
 
@@ -17,5 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));
-  return [...staticEntries, ...services];
+  const places = PLACES.map((p) => ({
+    url: `${SITE.url}/einzugsgebiet/${p.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+  return [...staticEntries, ...services, ...places];
 }

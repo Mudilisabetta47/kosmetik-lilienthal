@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { REGION_GROUPS, SERVICES, SITE, type Faq as FaqType } from '@/lib/data';
+import { REGION_GROUPS, SERVICES, SITE, HOME_FAQS, type Faq as FaqType } from '@/lib/data';
+import { PLACE_LINKS } from '@/lib/places';
 import { breadcrumbLd, faqLd, pageMeta } from '@/lib/seo';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { Btn } from '@/components/ui/Btn';
@@ -13,14 +14,13 @@ import { Reveal } from '@/components/motion/Reveal';
 export const metadata: Metadata = pageMeta({
   title: 'Einzugsgebiet: Autoaufbereitung Lilienthal, Bremen & Umland',
   description:
-    'Autoaufbereitung für Lilienthal, Bremen, Osterholz-Scharmbeck, Worpswede, Achim, Oyten, Delmenhorst, Verden und Umland – Falkenberger Landstraße 75.',
+    'Autoaufbereitung für Lilienthal, Bremen, Osterholz-Scharmbeck, Worpswede, Achim, Delmenhorst, Verden u. v. m. ✓ Handarbeit ✓ Festpreis. 0152 / 345 510 63',
   path: '/einzugsgebiet',
 });
 
 const FAQS: FaqType[] = [
   {
-    q: 'Aus welchen Orten kommen Ihre Kunden?',
-    a: 'Zu uns kommen Privatkunden, Geschäftskunden und Autohändler aus der gesamten Region – unter anderem aus Lilienthal, Osterholz-Scharmbeck, Bremen, Worpswede, Ritterhude, Grasberg, Schwanewede, Lemwerder, Achim, Oyten, Ottersberg, Tarmstedt, Delmenhorst, Stuhr, Weyhe, Syke, Verden, Rotenburg und Zeven.',
+    ...HOME_FAQS.find((f) => f.q.startsWith('In welchen Orten'))!,
   },
   {
     q: 'Wo genau finde ich das Studio?',
@@ -54,7 +54,7 @@ export default function EinzugsgebietPage() {
           <p className="eyebrow mb-6">Orte</p>
           <h2 id="orte" className="h2 max-w-[20ch]">Kundinnen und Kunden aus der ganzen <span className="serif-i silver-text">Region.</span></h2>
           <p className="lede mt-6 max-w-[60ch]">
-            Wir betreuen Privatkunden, Geschäftskunden und Autohändler. Wer zu uns kommt, bringt sein Fahrzeug ins Studio nach Lilienthal – hier ein Überblick, woher unsere Kundschaft kommt.
+            Wir betreuen Privatkunden, Geschäftskunden und Autohändler. Wer zu uns kommt, bringt sein Fahrzeug ins Studio nach Lilienthal. Zu jedem Ort finden Sie eine eigene Seite mit passenden Leistungen und Antworten auf häufige Fragen.
           </p>
 
           <div className="mt-14 grid gap-5 md:grid-cols-2">
@@ -63,8 +63,13 @@ export default function EinzugsgebietPage() {
                 <p className="eyebrow mb-5">{g.area}</p>
                 <ul className="flex flex-wrap gap-2.5">
                   {g.places.map((p) => (
-                    <li key={p} className={`rounded-full border px-4 py-2 text-[0.95rem] ${p === 'Lilienthal' ? 'border-brand bg-brand font-semibold text-ink' : 'border-white/15 text-bone/90'}`}>
-                      {p}
+                    <li key={p}>
+                      <Link
+                        href={PLACE_LINKS[p]}
+                        className={`inline-block rounded-full border px-4 py-2 text-[0.95rem] transition-colors ${p === 'Lilienthal' ? 'border-brand bg-brand font-semibold text-ink' : 'border-white/15 text-bone/90 hover:border-brand hover:text-brand'}`}
+                      >
+                        {p}
+                      </Link>
                     </li>
                   ))}
                 </ul>

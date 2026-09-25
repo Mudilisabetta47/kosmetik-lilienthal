@@ -20,10 +20,10 @@ export function RequestSection({ headingLevel = 2, initialService }: { headingLe
           </H>
           <Reveal>
             <p className="lede mt-7 max-w-[42ch]">
-              In vier kurzen Schritten zu Ihrem Wunschtermin – unverbindlich und persönlich. Wir melden uns bei Ihnen, um Umfang und Termin abzustimmen.
+              In vier kurzen Schritten zu Ihrer Anfrage – unverbindlich und persönlich. Rufen Sie uns danach kurz an, dann klären wir Termin, Umfang und Preis direkt am Telefon.
             </p>
             <ul className="mt-8 space-y-3 text-[0.98rem] text-bone/85">
-              {['Unverbindliche Anfrage', 'Persönliche Beratung durch den Inhaber', 'Festpreis nach kurzer Begutachtung'].map((t) => (
+              {['Unverbindliche Anfrage', 'Termin und Preis besprechen wir am Telefon', 'Festpreis nach kurzer Begutachtung'].map((t) => (
                 <li key={t} className="flex items-center gap-3">
                   <span className="grid h-6 w-6 place-items-center rounded-full border border-white/25"><Icon name="check" className="h-3.5 w-3.5" /></span>
                   {t}
@@ -31,7 +31,7 @@ export function RequestSection({ headingLevel = 2, initialService }: { headingLe
               ))}
             </ul>
             <div className="mt-10 rounded-3xl border border-white/[0.09] bg-white/[0.03] p-6">
-              <p className="eyebrow mb-3">Lieber direkt sprechen?</p>
+              <p className="eyebrow mb-3">Am schnellsten: einfach anrufen</p>
               <a href={SITE.phoneHref} data-cursor="Anrufen" className="tabular inline-flex items-center gap-3 text-[1.7rem] font-semibold tracking-tight hover:underline">
                 <Icon name="phone" className="h-6 w-6" /> {SITE.phoneDisplay}
               </a>

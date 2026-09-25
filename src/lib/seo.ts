@@ -158,7 +158,7 @@ export function faqLd(faqs: Faq[]) {
     mainEntity: faqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: { '@type': 'Answer', text: f.list ? `${f.a} ${f.listIntro ?? ''} ${f.list.join(', ')}`.replace(/\s+/g, ' ').trim() : f.a },
     })),
   };
 }

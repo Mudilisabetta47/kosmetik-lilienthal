@@ -9,9 +9,9 @@ import { Faq } from '@/components/sections/Faq';
 import { CtaBand } from '@/components/sections/CtaBand';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Preise: Autoaufbereitung Lilienthal ab 60 € | autokosmetik',
+  title: 'Preise Autoaufbereitung Lilienthal & Bremen | ab 60 €',
   description:
-    'Preise für Fahrzeugaufbereitung in Lilienthal: Innenaufbereitung ab 60 €, Polster & Leder ab 70 €, Hochglanzversiegelung ab 250 €, Nano-Versiegelung ab 350 €.',
+    'Preise Fahrzeugaufbereitung Lilienthal: ✓ Innenraum ab 60 € ✓ Polster ab 70 € ✓ Hochglanz ab 250 € ✓ Nano ab 350 €. Anrufen: 0152 / 345 510 63',
   path: '/preise',
 });
 

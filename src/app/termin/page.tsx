@@ -4,9 +4,9 @@ import { JsonLd } from '@/components/ui/JsonLd';
 import { RequestSection } from '@/components/sections/RequestSection';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Termin anfragen | autokosmetik Lilienthal',
+  title: 'Termin anfragen | Autoaufbereitung Lilienthal & Bremen',
   description:
-    'Termin für Fahrzeugaufbereitung in Lilienthal anfragen: Leistung wählen, Fahrzeug angeben, Wunschdatum nennen – unverbindlich und persönlich. Telefon 0152 / 345 510 63.',
+    'Termin für Fahrzeugaufbereitung in Lilienthal: ✓ online anfragen ✓ danach kurz anrufen ✓ Festpreis nach Begutachtung. Tel. 0152 / 345 510 63',
   path: '/termin',
 });
 

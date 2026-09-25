@@ -9,9 +9,9 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import { Reveal } from '@/components/motion/Reveal';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Leistungen: Fahrzeugaufbereitung Lilienthal | autokosmetik',
+  title: 'Leistungen: Autoaufbereitung Lilienthal & Bremen | autokosmetik',
   description:
-    'Alle Leistungen: Lackaufbereitung, Hochglanz- und Nano-Versiegelung, Innenreinigung, Polster & Leder, Motorwäsche, Folienentfernung und Verkaufsaufbereitung in Lilienthal.',
+    'Alle Leistungen der Fahrzeugaufbereitung in Lilienthal: ✓ Lack ✓ Innenraum ✓ Versiegelung ✓ Verkaufsaufbereitung ✓ Wohnmobil. Anrufen: 0152 / 345 510 63',
   path: '/leistungen',
 });
 

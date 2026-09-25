@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SERVICES, SITE } from '@/lib/data';
+import { PLACES } from '@/lib/places';
 import { Icon } from '@/components/ui/Icon';
 import { Logo } from '@/components/ui/Logo';
 import { Btn } from '@/components/ui/Btn';
@@ -88,9 +89,33 @@ export function Footer() {
           </nav>
         </div>
 
+        <nav aria-label="Einzugsgebiet" className="border-t border-white/[0.08] py-8">
+          <p className="eyebrow mb-4">Autoaufbereitung in der Region</p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[0.88rem]">
+            <li><Link href="/fahrzeugaufbereitung-bremen" className="text-bone/70 transition-colors hover:text-white">Bremen</Link></li>
+            {PLACES.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/einzugsgebiet/${p.slug}`} className="text-bone/70 transition-colors hover:text-white">{p.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <div className="flex flex-col justify-between gap-3 border-t border-white/[0.08] pt-8 text-[0.82rem] text-mute md:flex-row">
           <p>© {new Date().getFullYear()} autokosmetik Lilienthal · Inhabergeführte KFZ-Aufbereitung</p>
           <p>Falkenberger Landstraße 75 · 28865 Lilienthal</p>
+          <p>
+            Made by{' '}
+            <a
+              href="https://monvex-group.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-baseline font-bold tracking-[0.06em] text-bone/80 transition-colors hover:text-white"
+              aria-label="Made by MONVEX – monvex-group.de"
+            >
+              MONVE<span className="text-[#ff4f1f]">X</span>
+            </a>
+          </p>
         </div>
       </div>
       <p

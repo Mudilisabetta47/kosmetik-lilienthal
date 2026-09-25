@@ -26,10 +26,10 @@ export function MobileBar() {
       aria-hidden={!show}
     >
       <div className="grid grid-cols-[auto_1fr] gap-2 rounded-[28px] border border-white/10 bg-ink/85 p-2 backdrop-blur-xl">
-        <Btn href={SITE.phoneHref} variant="ghost" icon="phone" magnetic={false} className="!min-h-[50px] !px-5">
+        <Btn href={SITE.phoneHref} variant="ghost" icon="phone" magnetic={false} className="!min-h-[50px] !gap-2 !px-4 whitespace-nowrap">
           Anrufen
         </Btn>
-        <Btn href="/termin" magnetic={false} className="!min-h-[50px]">
+        <Btn href="/termin" magnetic={false} icon="none" className="!min-h-[50px] !px-4 whitespace-nowrap">
           Termin anfragen
         </Btn>
       </div>

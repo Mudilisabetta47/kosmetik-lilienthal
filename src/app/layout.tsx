@@ -17,11 +17,11 @@ const serif = Instrument_Serif({ subsets: ['latin'], display: 'swap', variable: 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Autokosmetik Lilienthal | Premium Fahrzeugaufbereitung Bremen',
+    default: 'Autoaufbereitung Lilienthal & Bremen | autokosmetik Lilienthal',
     template: '%s',
   },
   description:
-    'Premium Fahrzeugaufbereitung in Lilienthal bei Bremen: Lackaufbereitung, Versiegelung, Innenreinigung und Verkaufsaufbereitung in Handarbeit. Jetzt Termin anfragen.',
+    'Autoaufbereitung Lilienthal & Bremen: ✓ Lackaufbereitung ✓ Versiegelung ✓ Innenreinigung ✓ Verkaufsaufbereitung ✓ 4,8/5 Google. Jetzt anrufen: 0152 / 345 510 63',
   applicationName: SITE.name,
   authors: [{ name: SITE.name }],
   icons: { icon: '/icon.png', apple: '/icon.png' },
@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     siteName: SITE.name,
     images: [{ url: OG_IMAGE, width: 1200, height: 630 }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
   },
   formatDetection: { telephone: false },
 };

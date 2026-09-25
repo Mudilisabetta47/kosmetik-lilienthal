@@ -40,7 +40,7 @@ export function PageHero({
       <div className="wrap w-full pb-14 md:pb-20">
         <Breadcrumbs items={crumbs} />
         {eyebrow && <p className="eyebrow mb-5 mt-8">{eyebrow}</p>}
-        <h1 className={`display max-w-[18ch] text-[clamp(2.2rem,6.4vw,6.4rem)] ${eyebrow ? '' : 'mt-8'}`}>
+        <h1 className={`display max-w-[18ch] text-[clamp(1.6rem,7.4vw,3.4rem)] md:text-[clamp(3rem,6.4vw,6.4rem)] ${eyebrow ? '' : 'mt-8'}`}>
           <SplitText text={title} immediate delay={0.1} stagger={0.06} lineClassName="inline" />
         </h1>
         <div className="mt-8 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">

@@ -24,7 +24,7 @@ export function Location({ headingLevel = 2 }: { headingLevel?: 1 | 2 }) {
 
         <div className="mt-14 grid gap-6 lg:mt-20 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
-            <Reveal className="card-glass h-full rounded-[28px] p-7 md:p-10">
+            <Reveal className="card-glass h-full rounded-[28px] p-5 sm:p-7 md:p-10">
               <p className="eyebrow mb-5">Adresse</p>
               <address className="not-italic">
                 <p className="text-[clamp(1.6rem,2.6vw,2.4rem)] font-semibold leading-[1.1] tracking-[-0.02em]">
@@ -38,7 +38,7 @@ export function Location({ headingLevel = 2 }: { headingLevel?: 1 | 2 }) {
               </address>
 
               <p className="eyebrow mb-3 mt-10">Telefon</p>
-              <a href={SITE.phoneHref} data-cursor="Anrufen" className="tabular inline-flex items-center gap-3 text-[clamp(1.5rem,2.4vw,2.1rem)] font-semibold tracking-tight hover:underline">
+              <a href={SITE.phoneHref} data-cursor="Anrufen" className="tabular inline-flex items-center gap-3 text-[clamp(1.1rem,5.4vw,2.1rem)] font-semibold tracking-tight hover:underline">
                 <Icon name="phone" className="h-6 w-6" />
                 {SITE.phoneDisplay}
               </a>

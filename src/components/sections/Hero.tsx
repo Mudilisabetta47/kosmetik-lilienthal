@@ -80,7 +80,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 1.05, ease: EASE }}
             className="lede mt-7 max-w-[54ch] text-bone/75 md:mt-9"
           >
-            Professionelle Fahrzeugaufbereitung in Lilienthal – für tiefen Glanz, gepflegte Innenräume und nachhaltigen Werterhalt.
+            Professionelle Fahrzeugaufbereitung in Lilienthal und Bremen – für tiefen Glanz, gepflegte Innenräume und nachhaltigen Werterhalt.
           </motion.p>
 
           <motion.div

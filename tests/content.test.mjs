@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import * as data from '../src/lib/data.ts';
+import { PLACES } from '../src/lib/places.ts';
 
 const { SERVICES, SITE, GALLERY, GALLERY_ALL, BEFORE_AFTER, STORY_SCENES, EXTRA_IMAGES, REGION_GROUPS, STATIC_ROUTES, HOME_FAQS, PRICE_NOTE, NAV } = data;
 const generated = fs.readFileSync('src/lib/images.generated.ts', 'utf8');
@@ -17,7 +18,7 @@ const REAL_PRICES = {
   hochglanzversiegelung: 250,
   'nano-versiegelung': 350,
   motorwaesche: 80,
-  'orsun-geruchsentfernung': 100,
+  'ozon-geruchsentfernung': 100,
 };
 const NO_PRICE = ['lackaufbereitung', 'carnauba-wachs', 'folienentfernung', 'wohnwagen-aufbereitung'];
 
@@ -38,7 +39,7 @@ test('Preishinweis: Mittelklasse, +20 % und +40 %', () => {
 test('11 Leistungen mit den geforderten Slugs', () => {
   const slugs = SERVICES.map((s) => s.slug).sort();
   assert.equal(new Set(slugs).size, slugs.length, 'Slugs eindeutig');
-  for (const s of ['lackaufbereitung', 'innenreinigung', 'hochglanzversiegelung', 'nano-versiegelung', 'carnauba-wachs', 'polster-leder', 'orsun-geruchsentfernung', 'motorwaesche', 'folienentfernung', 'verkaufsaufbereitung', 'wohnwagen-aufbereitung']) {
+  for (const s of ['lackaufbereitung', 'innenreinigung', 'hochglanzversiegelung', 'nano-versiegelung', 'carnauba-wachs', 'polster-leder', 'ozon-geruchsentfernung', 'motorwaesche', 'folienentfernung', 'verkaufsaufbereitung', 'wohnwagen-aufbereitung']) {
     assert.ok(slugs.includes(s), `Slug fehlt: ${s}`);
   }
   assert.equal(SERVICES.length, 11);
@@ -50,7 +51,7 @@ test('Jede Leistung hat Ablauf, Vorteile, FAQ, Meta-Daten in sinnvoller Länge',
     assert.ok(s.benefits.length >= 4, `${s.slug}: Vorteile`);
     assert.ok(s.faqs.length >= 3, `${s.slug}: FAQ`);
     assert.ok(s.metaTitle.length <= 66, `${s.slug}: Title ${s.metaTitle.length} Zeichen`);
-    assert.ok(s.metaDescription.length >= 100 && s.metaDescription.length <= 170, `${s.slug}: Description ${s.metaDescription.length} Zeichen`);
+    assert.ok(s.metaDescription.length >= 100 && s.metaDescription.length <= 165, `${s.slug}: Description ${s.metaDescription.length} Zeichen`);
     assert.match(s.h1, /Lilienthal/, `${s.slug}: H1 nennt Lilienthal`);
     for (const r of s.related) assert.ok(SERVICES.some((x) => x.slug === r), `${s.slug}: related ${r}`);
   }
@@ -113,7 +114,44 @@ test('Jede Route hat eine Seitendatei; Navigation zeigt nur auf existierende Rou
   }
 });
 
-test('Keine nahezu identischen Regionalseiten: nur Hub + Bremen', () => {
-  const regionPages = fs.readdirSync('src/app').filter((d) => /aufbereitung-|einzugsgebiet|autoaufbereitung-/.test(d));
-  assert.deepEqual(regionPages.sort(), ['einzugsgebiet', 'fahrzeugaufbereitung-bremen']);
+test('Ortsseiten: jeder Ort aus dem Einzugsgebiet (außer Lilienthal/Bremen) hat eine eigene Seite', () => {
+  const all = REGION_GROUPS.flatMap((g) => g.places).filter((p) => !['Lilienthal', 'Bremen'].includes(p));
+  const names = PLACES.map((p) => p.name.replace(' (Wümme)', ''));
+  for (const p of all) assert.ok(names.includes(p), `Ortsseite fehlt: ${p}`);
+  assert.equal(PLACES.length, all.length);
+  assert.ok(fs.existsSync('src/app/einzugsgebiet/[ort]/page.tsx'));
+});
+
+test('Ortsseiten: keine Doppelseiten – Texte, Meta-Daten und FAQ sind je Ort einzigartig', () => {
+  const unique = (arr, label) => assert.equal(new Set(arr).size, arr.length, `${label} nicht eindeutig`);
+  unique(PLACES.map((p) => p.slug), 'Slugs');
+  unique(PLACES.map((p) => p.metaTitle), 'Titles');
+  unique(PLACES.map((p) => p.metaDescription), 'Descriptions');
+  unique(PLACES.map((p) => p.lead), 'Lead-Texte');
+  unique(PLACES.flatMap((p) => p.intro), 'Intro-Absätze');
+  unique(PLACES.flatMap((p) => p.faqs.map((f) => f.q + f.a)), 'Ort-FAQs');
+  unique(PLACES.flatMap((p) => p.focus.map((f) => f.text)), 'Fokus-Texte');
+  for (const p of PLACES) {
+    const words = p.intro.join(' ').split(/\s+/).length;
+    assert.ok(words >= 80, `${p.slug}: Intro zu kurz (${words} Wörter)`);
+    assert.ok(p.metaTitle.length <= 66, `${p.slug}: Title ${p.metaTitle.length}`);
+    assert.ok(p.metaDescription.length >= 100 && p.metaDescription.length <= 175, `${p.slug}: Description ${p.metaDescription.length}`);
+    assert.equal(p.focus.length, 3);
+    assert.ok(p.faqs.length >= 2);
+    assert.ok(p.intro.join(' ').includes(p.name.split(' ')[0]), `${p.slug}: Intro nennt Ort`);
+    for (const f of p.focus) assert.ok(SERVICES.some((s) => s.slug === f.service), `${p.slug}: Leistung ${f.service}`);
+    for (const n of p.neighbors) assert.ok(PLACES.some((x) => x.slug === n), `${p.slug}: Nachbar ${n}`);
+    assert.ok(imageKeys.has(p.img), `${p.slug}: Bild ${p.img}`);
+  }
+});
+
+test('Home-FAQ „Orte“ enthält alle 19 Orte als Liste (wie auf der alten Seite)', () => {
+  const f = HOME_FAQS.find((x) => x.q.startsWith('In welchen Orten'));
+  assert.equal(f.list.length, 19);
+  assert.equal(f.listIntro, 'Wir sind für Sie da in:');
+});
+
+test('Schreibweise: „Orsun“ kommt nirgends mehr vor', () => {
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+  for (const f of walk('src').filter((f) => /\.(tsx?|css)$/.test(f))) assert.ok(!/orsun/i.test(fs.readFileSync(f, 'utf8')), `Orsun in ${f}`);
 });

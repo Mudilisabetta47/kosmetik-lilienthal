@@ -19,9 +19,9 @@ import { Reveal } from '@/components/motion/Reveal';
 import { SplitText } from '@/components/motion/SplitText';
 
 export const metadata: Metadata = pageMeta({
-  title: 'Autokosmetik Lilienthal | Premium Fahrzeugaufbereitung Bremen',
+  title: 'Autoaufbereitung Lilienthal & Bremen | autokosmetik Lilienthal',
   description:
-    'Autokosmetik & Autoaufbereitung in Lilienthal bei Bremen: Lackaufbereitung, Versiegelung, Innenreinigung und Verkaufsaufbereitung in Handarbeit. Google 4,8/5.',
+    'Autoaufbereitung Lilienthal & Bremen: ✓ Lackaufbereitung ✓ Versiegelung ✓ Innenreinigung ✓ Verkaufsaufbereitung ✓ 4,8/5 Google. Jetzt anrufen: 0152 / 345 510 63',
   path: '/',
 });
 
