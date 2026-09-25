@@ -77,7 +77,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <Reveal>
-              <div className="rounded-[26px] bg-ink p-7 text-bone">
+              <div className="on-photo rounded-[26px] bg-ink p-7 text-bone">
                 <p className="eyebrow mb-3">Fragen? Ruf uns an</p>
                 <a href={SITE.phoneHref} data-cursor="Anrufen" className="tabular inline-flex items-center gap-3 text-[1.6rem] font-semibold tracking-tight hover:underline">
                   <Icon name="phone" className="h-6 w-6" /> {SITE.phoneDisplay}

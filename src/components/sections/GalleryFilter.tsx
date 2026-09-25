@@ -33,7 +33,7 @@ export function GalleryFilter({ items }: { items: Item[] }) {
             aria-selected={cat === c.id}
             onClick={() => setCat(c.id)}
             className={`rounded-full border px-5 py-2.5 text-[0.9rem] font-medium transition-colors ${
-              cat === c.id ? 'border-[#14224a] bg-[#14224a] text-white' : 'border-[#14224a]/25 text-[#14224a] hover:border-[#14224a]'
+              cat === c.id ? 'border-[#14224a] bg-[#14224a] !text-white' : 'border-[#14224a]/25 text-[#14224a] hover:border-[#14224a]'
             }`}
           >
             {c.label} <span className="tabular opacity-60">({counts[c.id]})</span>

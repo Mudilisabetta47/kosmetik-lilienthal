@@ -36,17 +36,22 @@ export function SplitText({
     if (profile === 'none') return <span className={cls}>{word}</span>;
     const i = n++;
     const t = { duration: profile === 'lite' ? 0.8 : 1.15, delay: delay + i * stagger, ease: EASE };
+    // Der Trigger sitzt auf der Maske (nicht auf dem versteckten Wort): Ein komplett weggeschobenes Wort
+    // schneidet den Viewport nie und würde sonst unsichtbar bleiben (z. B. bei Zeilenumbruch im Wort).
     return (
-      <span className="inline-block overflow-hidden align-bottom" style={{ paddingBottom: '0.14em', marginBottom: '-0.14em', paddingTop: '0.2em', marginTop: '-0.2em' }}>
+      <motion.span
+        className="inline-block overflow-hidden align-bottom"
+        style={{ paddingBottom: '0.14em', marginBottom: '-0.14em', paddingTop: '0.2em', marginTop: '-0.2em' }}
+        initial="hidden"
+        {...(immediate ? { animate: 'show' } : { whileInView: 'show', viewport: { once: true, margin: '0px 0px -8% 0px' } })}
+      >
         <motion.span
           className={`split-inner inline-block will-change-transform ${cls}`}
-          initial={{ y: '112%' }}
-          {...(immediate ? { animate: { y: '0%' } } : { whileInView: { y: '0%' }, viewport: { once: true, margin: '0px 0px -8% 0px' } })}
-          transition={t}
+          variants={{ hidden: { y: '112%' }, show: { y: '0%', transition: t } }}
         >
           {word}
         </motion.span>
-      </span>
+      </motion.span>
     );
   };
 
