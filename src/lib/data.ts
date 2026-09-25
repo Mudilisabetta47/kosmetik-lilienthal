@@ -590,6 +590,8 @@ export const PRICE_NOTE = {
 } as const;
 
 export const GALLERY: { img: string; title: string; sub: string }[] = [
+  { img: 'corvetteSeite', title: 'Chevrolet Corvette', sub: 'Aufbereitet in Lilienthal' },
+  { img: 'corvetteFront', title: 'Chevrolet Corvette', sub: 'Frontansicht nach der Aufbereitung' },
   { img: 'taycan', title: 'Porsche Taycan', sub: 'Aufbereitet in Lilienthal' },
   { img: 'lambo', title: 'Lamborghini Huracán', sub: 'Detailing-Ergebnis' },
   { img: 'porsche911Turbo', title: 'Porsche 911 Turbo', sub: 'Lackaufbereitung' },
@@ -607,6 +609,7 @@ export const GALLERY: { img: string; title: string; sub: string }[] = [
 /** Vollständige Galerie (Unterseite /galerie) mit Original-Beschriftungen */
 export const GALLERY_ALL: { img: string; title: string; sub: string }[] = [
   ...GALLERY,
+  { img: 'corvetteHeck', title: 'Chevrolet Corvette', sub: 'Heckansicht nach der Aufbereitung' },
   { img: 'carreraS', title: 'Porsche 911 Carrera S', sub: 'Aufbereitung vor dem Studio' },
   { img: 'porsche991', title: 'Porsche 991', sub: 'Hochglanz nach Lackaufbereitung' },
   { img: 'g63Heck', title: 'Mercedes-AMG G 63', sub: 'Heckansicht nach Aufbereitung' },

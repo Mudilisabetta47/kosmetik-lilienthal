@@ -26,8 +26,8 @@ export default function GaleriePage() {
         eyebrow="Galerie"
         title="Fahrzeuge, die wir wieder zum Strahlen bringen."
         lead="Echte Kundenfahrzeuge aus unserem Studio in der Falkenberger Landstraße – aufgenommen vor Ort nach der Aufbereitung."
-        img="taycan"
-        imgAlt="Porsche Taycan vor dem Studio autokosmetik Lilienthal"
+        img="corvetteSeite"
+        imgAlt="Schwarze Chevrolet Corvette mit Bronze-Felgen vor dem Studio autokosmetik Lilienthal"
         imgPosition="50% 55%"
       >
         <Btn href="/termin" cursor="Termin">Ihr Fahrzeug anmelden</Btn>

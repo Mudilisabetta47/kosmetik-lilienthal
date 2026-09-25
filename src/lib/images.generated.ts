@@ -55,6 +55,24 @@ export const IMAGES = {
     "height": 1440,
     "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoUAA8APu1qrU8ppiQiMAgBMB2JQBadAtsislY730eksAD80IO1o5vniDIaxgA20Uj6Cote/rekm4Dt2Zrur3NrxgOveCTEfTxxqwFcqEgAAA=="
   },
+  "corvetteSeite": {
+    "src": "/img/corvetteSeite.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAwCdASoUAA8APu1yrU+pp6QiMAgBMB2JZACdMoAJ6QH3XBos5K4AAP6jdPHaHB9WHWn57g/oYQcghpHKNqy5U/u4NLWMttiWr7gCyhjd4YnD/MsSoqb8AAA="
+  },
+  "corvetteFront": {
+    "src": "/img/corvetteFront.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoUAA8APu1iqU2ppaOiMAgBMB2JZACdMoACibbp/kxsDkylAAD8gt8WOfvyV1jNiiNwZNA42BWbMxyQxR1qqGBq7GxJNQqvqUzBqAAA"
+  },
+  "corvetteHeck": {
+    "src": "/img/corvetteHeck.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoUAA8APu1kqk2ppaQiMAgBMB2JQBOkBLguvYeJFwwO8U3gwAD+Nx6cNOwHMFjzjGRbqVsUb6SCWWoZ8p0+VKgeOVIr0/Zfs3Kv8lJ33caSlfEaAAA="
+  },
   "lambo": {
     "src": "/img/lambo.webp",
     "width": 1920,

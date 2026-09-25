@@ -19,6 +19,10 @@ const MAP = {
   sealAfter: ['after-seal.jpg'],
   sealBefore: ['before-seal.jpg'],
   taycan: ['taycan.jpg'],
+  // Corvette: Kennzeichen vorab per scripts/mask-plates.mjs verdeckt
+  corvetteSeite: ['corvette-seite.jpg'],
+  corvetteFront: ['corvette-front.jpg'],
+  corvetteHeck: ['corvette-heck.jpg'],
   lambo: ['lambo.jpg'],
   porsche911Turbo: ['porsche-911-turbo.jpg'],
   mustang: ['mustang.webp'],
