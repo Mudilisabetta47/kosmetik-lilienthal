@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useConsent } from '@/components/layout/useConsent';
 import { SITE } from '@/lib/data';
 import { Icon } from '@/components/ui/Icon';
 
@@ -9,7 +10,13 @@ import { Icon } from '@/components/ui/Icon';
  * Feste Höhe/Ratio → kein Layout Shift beim Nachladen.
  */
 export function MapEmbed() {
-  const [on, setOn] = useState(false);
+  const consent = useConsent();
+  const [click, setClick] = useState(false);
+  const allowed = consent?.maps === true;
+  const on = allowed || click;
+  useEffect(() => {
+    if (consent && !consent.maps) setClick(false);
+  }, [consent]);
   return (
     <div className="on-photo relative aspect-[16/9] w-full overflow-hidden rounded-[28px] border border-white/[0.09] bg-graphite sm:aspect-[16/8]">
       {on ? (
@@ -24,7 +31,7 @@ export function MapEmbed() {
       ) : (
         <button
           type="button"
-          onClick={() => setOn(true)}
+          onClick={() => setClick(true)}
           data-cursor="Karte laden"
           className="group absolute inset-0 grid place-items-center text-center"
           aria-label="Interaktive Karte laden (Daten werden an Google übertragen)"
@@ -45,7 +52,7 @@ export function MapEmbed() {
             </span>
             <span className="text-[1.05rem] font-semibold">Karte laden</span>
             <span className="max-w-[42ch] text-[0.8rem] leading-relaxed text-mute">
-              Beim Laden der Karte werden Daten an Google übertragen. Mehr dazu in der Datenschutzerklärung.
+              Beim Laden der Karte werden Daten an Google übertragen. Dauerhaft erlauben können Sie das unter „Cookie-Einstellungen“ im Footer.
             </span>
           </span>
         </button>

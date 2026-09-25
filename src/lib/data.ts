@@ -22,7 +22,7 @@ export const SITE = {
   phoneDisplay: '0152 / 345 510 63',
   phoneHref: 'tel:+4915234551063',
   phoneIntl: '+49 152 34551063',
-  legalEmail: 'mudi@mep-agentur.de',
+  legalEmail: 'mudi@monvex-group.de',
   rating: '4,8',
   reviewsUrl: 'https://share.google/4qr3EB8RbXQSR0R7n',
   mapsEmbed:

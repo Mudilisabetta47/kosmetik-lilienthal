@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMeta({
 export default function DatenschutzPage() {
   return (
     <LegalPage title="Datenschutzerklärung">
-      <p className="text-bone">Informationen zur Verarbeitung Ihrer Daten</p>
+      <p className="font-medium text-[#14224a]">Informationen zur Verarbeitung Ihrer Daten</p>
       <section>
         <h2>1. Verantwortlicher</h2>
         <p>autokosmetik (Einzelunternehmer)<br />Inhaber: {SITE.owner}<br />{SITE.street}<br />{SITE.zip} {SITE.city}</p>
@@ -46,11 +46,11 @@ export default function DatenschutzPage() {
       </section>
       <section>
         <h2>8. Karte (Google Maps)</h2>
-        <p>Auf der Startseite können Sie per Klick eine Karte von Google Maps laden. Erst durch Ihren Klick wird eine Verbindung zu den Servern von Google hergestellt; dabei werden u. a. Ihre IP-Adresse und Angaben zu Ihrem Browser an Google übertragen. Ohne Klick findet keine Übertragung statt.</p>
+        <p>Auf der Startseite können Sie eine Karte von Google Maps laden. Eine Verbindung zu den Servern von Google wird erst hergestellt, wenn Sie im Cookie-Hinweis „Alle akzeptieren“ bzw. „Externe Medien“ erlauben oder auf „Karte laden“ klicken; dabei werden u. a. Ihre IP-Adresse und Angaben zu Ihrem Browser an Google übertragen (Rechtsgrundlage: Ihre Einwilligung, Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Ohne Ihre Zustimmung findet keine Übertragung statt. Die Einwilligung können Sie jederzeit über „Cookie-Einstellungen“ im Seitenende widerrufen.</p>
       </section>
       <section>
-        <h2>9. Cookies und Tracking</h2>
-        <p>Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken und verwendet keine Tracking-Dienste.</p>
+        <h2>9. Cookies, lokale Speicherung und Tracking</h2>
+        <p>Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken und verwendet keine Tracking-Dienste. Wir speichern lediglich Ihre Auswahl im Cookie-Hinweis im lokalen Speicher Ihres Browsers (localStorage, Schlüssel „akl-consent-v1“). Das ist technisch erforderlich, um Ihre Entscheidung zu berücksichtigen (§ 25 Abs. 2 Nr. 2 TDDDG), und enthält keine personenbezogenen Daten.</p>
       </section>
       <section>
         <h2>10. Änderungen dieser Erklärung</h2>

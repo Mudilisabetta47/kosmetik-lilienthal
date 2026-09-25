@@ -4,6 +4,7 @@ import { PLACES } from '@/lib/places';
 import { Icon } from '@/components/ui/Icon';
 import { Logo } from '@/components/ui/Logo';
 import { Btn } from '@/components/ui/Btn';
+import { CookieSettingsLink } from './CookieSettingsLink';
 
 export function Footer() {
   return (
@@ -80,6 +81,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-[0.95rem]">
               <li><Link href="/impressum" className="text-bone/80 hover:text-white">Impressum</Link></li>
               <li><Link href="/datenschutz" className="text-bone/80 hover:text-white">Datenschutz</Link></li>
+              <li><CookieSettingsLink className="text-bone/80 hover:text-white" /></li>
               <li>
                 <a href={SITE.reviewsUrl} target="_blank" rel="noopener noreferrer" className="text-bone/80 hover:text-white">
                   Google-Bewertungen

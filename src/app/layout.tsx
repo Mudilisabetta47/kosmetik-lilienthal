@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { MobileBar } from '@/components/layout/MobileBar';
+import { CookieBanner } from '@/components/layout/CookieBanner';
 import { CustomCursor } from '@/components/motion/CustomCursor';
 import { ScrollProgress } from '@/components/motion/ScrollProgress';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="inhalt">{children}</main>
         <Footer />
         <MobileBar />
+        <CookieBanner />
       </body>
     </html>
   );
