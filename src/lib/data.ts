@@ -10,7 +10,10 @@ export const SITE = {
   legalName: 'autokosmetik (Einzelunternehmer)',
   owner: 'Izzeddin AK',
   taxId: '36 101 11064',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://autokosmetik-lilienthal.de',
+  // Leere oder ungültige Werte (z. B. leere Vercel-Variable) fallen auf die Standard-Domain zurück
+  url: /^https?:\/\/[^\s/]+/.test(process.env.NEXT_PUBLIC_SITE_URL ?? '')
+    ? (process.env.NEXT_PUBLIC_SITE_URL as string).replace(/\/+$/, '')
+    : 'https://autokosmetik-lilienthal.de',
   tagline: 'Premium Fahrzeugaufbereitung · Lilienthal / Bremen',
   street: 'Falkenberger Landstraße 75',
   zip: '28865',
