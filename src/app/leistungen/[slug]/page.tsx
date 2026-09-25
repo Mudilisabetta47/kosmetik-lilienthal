@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ARTICLES_BY_SERVICE } from '@/lib/articles';
 import { COMPARE_BY_SLUG, EXTRA_IMAGES, GROUPS, PRICE_NOTE, SERVICES, SERVICE_BY_SLUG, SITE } from '@/lib/data';
 import { breadcrumbLd, faqLd, pageMeta, serviceLd } from '@/lib/seo';
 import { JsonLd } from '@/components/ui/JsonLd';
@@ -212,6 +213,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </li>
             ))}
           </ul>
+          {ARTICLES_BY_SERVICE(s.slug).length > 0 && (
+            <div className="mt-14">
+              <p className="eyebrow mb-4">Ratgeber zum Thema</p>
+              <ul className="flex flex-wrap gap-3">
+                {ARTICLES_BY_SERVICE(s.slug).slice(0, 3).map((a) => (
+                  <li key={a.slug}>
+                    <Link href={`/ratgeber/${a.slug}`} className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-[0.92rem] transition-colors hover:border-brand hover:text-brand">
+                      {a.title.split(':')[0]} <Icon name="arrow" className="h-4 w-4" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <p className="mt-14 max-w-[70ch] text-[0.98rem] leading-relaxed text-mute">
             Unser Studio liegt in Lilienthal. Zu uns kommen Kundinnen und Kunden aus Bremen und dem Umland –{' '}
             <Link href="/fahrzeugaufbereitung-bremen" className="text-bone underline underline-offset-4">Fahrzeugaufbereitung für Bremen</Link>,{' '}

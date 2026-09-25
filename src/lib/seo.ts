@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { REGION_GROUPS, SERVICES, SITE, type Faq, type Service } from './data';
+import type { Article } from './articles';
 
 export const abs = (path: string) => `${SITE.url}${path === '/' ? '' : path}`;
 export const OG_IMAGE = '/og.jpg';
@@ -100,6 +101,10 @@ export function siteGraph() {
         ],
         areaServed: ALL_PLACES.map((name) => ({ '@type': 'City', name })),
         hasMap: SITE.mapsRoute,
+        geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng },
+        ...(SITE.reviewCount
+          ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', bestRating: '5', worstRating: '1', reviewCount: SITE.reviewCount } }
+          : {}),
         sameAs: [SITE.reviewsUrl],
         knowsAbout: SERVICES.map((s) => s.name),
         hasOfferCatalog: {
@@ -160,5 +165,21 @@ export function faqLd(faqs: Faq[]) {
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.list ? `${f.a} ${f.listIntro ?? ''} ${f.list.join(', ')}`.replace(/\s+/g, ' ').trim() : f.a },
     })),
+  };
+}
+
+export function articleLd(a: Article) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: a.title,
+    description: a.metaDescription,
+    datePublished: a.date,
+    dateModified: a.date,
+    inLanguage: 'de-DE',
+    mainEntityOfPage: abs(`/ratgeber/${a.slug}`),
+    image: `${SITE.url}/img/${a.img}.webp`,
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
   };
 }

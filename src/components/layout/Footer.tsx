@@ -60,6 +60,10 @@ export function Footer() {
             <ul className="space-y-2.5 text-[0.95rem]">
               {[
                 ['/preise', 'Preise'],
+                ['/ratgeber', 'Ratgeber'],
+                ['/haeufige-fragen', 'Häufige Fragen'],
+                ['/ueber-uns', 'Über uns'],
+                ['/kontakt', 'Kontakt'],
                 ['/#vorher-nachher', 'Vorher / Nachher'],
                 ['/galerie', 'Galerie'],
                 ['/#standort', 'Standort'],

@@ -24,6 +24,9 @@ export const SITE = {
   phoneIntl: '+49 152 34551063',
   legalEmail: 'mudi@monvex-group.de',
   rating: '4,8',
+  /** Anzahl der Google-Bewertungen – nur setzen, wenn verifiziert (NEXT_PUBLIC_REVIEW_COUNT) */
+  reviewCount: ((n) => (Number.isFinite(n) && n > 0 ? n : null))(parseInt(process.env.NEXT_PUBLIC_REVIEW_COUNT ?? '', 10)) as number | null,
+  geo: { lat: 53.154148, lng: 8.929629 },
   reviewsUrl: 'https://share.google/4qr3EB8RbXQSR0R7n',
   mapsEmbed:
     'https://www.google.com/maps?q=Falkenberger+Landstra%C3%9Fe+75%2C+28865+Lilienthal&output=embed',
@@ -825,6 +828,7 @@ export const NAV = {
     { label: 'Preise', href: '/preise' },
     { label: 'Vorher / Nachher', href: '/#vorher-nachher' },
     { label: 'Galerie', href: '/galerie' },
+    { label: 'Ratgeber', href: '/ratgeber' },
     { label: 'Standort', href: '/#standort' },
   ],
 } as const;
@@ -834,6 +838,10 @@ export const STATIC_ROUTES = [
   '/leistungen',
   '/preise',
   '/galerie',
+  '/ratgeber',
+  '/ueber-uns',
+  '/kontakt',
+  '/haeufige-fragen',
   '/termin',
   '/einzugsgebiet',
   '/fahrzeugaufbereitung-bremen',

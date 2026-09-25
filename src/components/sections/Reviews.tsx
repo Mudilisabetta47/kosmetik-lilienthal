@@ -39,7 +39,7 @@ export function Reviews() {
               <Stars className="w-max text-brand" />
             </div>
           </div>
-          <p className="mt-6 text-[1.05rem] text-bone/85">Bewertungen auf Google</p>
+          <p className="mt-6 text-[1.05rem] text-bone/85">{SITE.reviewCount ? `Bewertungen auf Google · ${SITE.reviewCount} Rezensionen` : 'Bewertungen auf Google'}</p>
           <p className="mx-auto mt-3 max-w-[52ch] text-mute">
             Kundinnen und Kunden aus Lilienthal, Bremen und Osterholz-Scharmbeck bewerten uns auf Google.
           </p>

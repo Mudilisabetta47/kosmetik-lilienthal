@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { SERVICES, SITE, STATIC_ROUTES } from '@/lib/data';
 import { PLACES } from '@/lib/places';
+import { ARTICLES } from '@/lib/articles';
 
 const LEGAL = new Set(['/impressum', '/datenschutz']);
 
@@ -24,5 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
-  return [...staticEntries, ...services, ...places];
+  const articles = ARTICLES.map((a) => ({
+    url: `${SITE.url}/ratgeber/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+  return [...staticEntries, ...services, ...places, ...articles];
 }

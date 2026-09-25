@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as data from '../src/lib/data.ts';
 import { PLACES } from '../src/lib/places.ts';
+import { ARTICLES } from '../src/lib/articles.ts';
 
 const { SERVICES, SITE, GALLERY, GALLERY_ALL, BEFORE_AFTER, STORY_SCENES, EXTRA_IMAGES, REGION_GROUPS, STATIC_ROUTES, HOME_FAQS, PRICE_NOTE, NAV } = data;
 const generated = fs.readFileSync('src/lib/images.generated.ts', 'utf8');
@@ -154,4 +155,30 @@ test('Home-FAQ „Orte“ enthält alle 19 Orte als Liste (wie auf der alten Sei
 test('Schreibweise: „Orsun“ kommt nirgends mehr vor', () => {
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
   for (const f of walk('src').filter((f) => /\.(tsx?|css)$/.test(f))) assert.ok(!/orsun/i.test(fs.readFileSync(f, 'utf8')), `Orsun in ${f}`);
+});
+
+test('Ratgeber: Artikel vollständig, eindeutig und mit gültigen Verweisen', () => {
+  const unique = (arr, l) => assert.equal(new Set(arr).size, arr.length, `${l} nicht eindeutig`);
+  unique(ARTICLES.map((a) => a.slug), 'Slugs');
+  unique(ARTICLES.map((a) => a.metaTitle), 'Titles');
+  unique(ARTICLES.map((a) => a.metaDescription), 'Descriptions');
+  assert.ok(ARTICLES.length >= 8);
+  for (const a of ARTICLES) {
+    const words = a.sections.flatMap((s) => [...s.p, ...(s.list ?? [])]).join(' ').split(/\s+/).length;
+    assert.ok(words >= 200, `${a.slug}: zu kurz (${words} Wörter)`);
+    assert.ok(a.metaTitle.length <= 66, `${a.slug}: Title ${a.metaTitle.length}`);
+    assert.ok(a.metaDescription.length >= 100 && a.metaDescription.length <= 170, `${a.slug}: Description ${a.metaDescription.length}`);
+    assert.ok(imageKeys.has(a.img), `${a.slug}: Bild ${a.img}`);
+    assert.ok(a.faqs.length >= 2);
+    for (const sv of a.services) assert.ok(SERVICES.some((x) => x.slug === sv), `${a.slug}: Leistung ${sv}`);
+    for (const r of a.related) assert.ok(ARTICLES.some((x) => x.slug === r) && r !== a.slug, `${a.slug}: related ${r}`);
+    assert.match(a.date, /^\d{4}-\d{2}-\d{2}$/);
+  }
+  const all = JSON.stringify(ARTICLES).toLowerCase();
+  for (const bad of ['garantiert', 'bestes ergebnis der region', 'nr. 1', 'platz 1', 'preisgarantie']) assert.ok(!all.includes(bad), `verbotene Formulierung: ${bad}`);
+});
+
+test('Marketing-Dateien vorhanden (QR-Karte, Google-Texte, Ads)', () => {
+  for (const f of ['marketing/bewertungskarte-A6.png', 'marketing/bewertungs-qr.png', 'docs/GOOGLE-PROFIL.md', 'docs/GOOGLE-ADS.md', 'docs/SEO.md']) assert.ok(fs.existsSync(f), f);
+  assert.ok(fs.existsSync('src/app/bewerten/route.ts'));
 });

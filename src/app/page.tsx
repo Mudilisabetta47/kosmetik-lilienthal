@@ -15,6 +15,7 @@ import { Reviews } from '@/components/sections/Reviews';
 import { Location } from '@/components/sections/Location';
 import { Faq } from '@/components/sections/Faq';
 import { RequestSection } from '@/components/sections/RequestSection';
+import { GuideTeaser } from '@/components/sections/GuideTeaser';
 import { Reveal } from '@/components/motion/Reveal';
 import { SplitText } from '@/components/motion/SplitText';
 
@@ -43,6 +44,8 @@ export default function HomePage() {
       <SaleSection />
       <Reviews />
       <Location />
+
+      <GuideTeaser />
 
       <section id="faq" className="light relative scroll-mt-20 bg-white section-y" aria-labelledby="faq-title">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
