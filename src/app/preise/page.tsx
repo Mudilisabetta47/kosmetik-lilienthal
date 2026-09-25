@@ -38,7 +38,7 @@ export default function PreisePage() {
         <PriceTable />
       </section>
 
-      <section className="bg-ink section-y" aria-labelledby="preis-faq">
+      <section className="light bg-white section-y" aria-labelledby="preis-faq">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
             <p className="eyebrow mb-6">FAQ</p>

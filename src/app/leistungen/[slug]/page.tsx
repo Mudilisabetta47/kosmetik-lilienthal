@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </PageHero>
 
       {/* Beschreibung + Vorteile */}
-      <section className="bg-ink section-y" aria-labelledby="was">
+      <section className="light curtain bg-white section-y" aria-labelledby="was">
         <div className="wrap grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <div>
             <p className="eyebrow mb-6">Die Leistung</p>
@@ -89,7 +89,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <ul className="space-y-4">
                 {s.benefits.map((b) => (
                   <li key={b} className="flex gap-4 text-[1.02rem] leading-snug">
-                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-bone text-ink">
+                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-ink">
                       <Icon name="check" className="h-3.5 w-3.5" />
                     </span>
                     {b}
@@ -121,7 +121,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Bilder */}
-      <section className="bg-ink py-[clamp(72px,10vw,150px)]" aria-label={`Bilder: ${s.name}`}>
+      <section className="light bg-white py-[clamp(72px,10vw,150px)]" aria-label={`Bilder: ${s.name}`}>
         <div className="wrap grid gap-5 md:grid-cols-12 md:gap-6">
           <div className="md:col-span-7">
             {cmp ? (
@@ -191,7 +191,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Interne Verlinkung */}
-      <section className="bg-coal section-y" aria-labelledby="mehr">
+      <section className="light bg-white section-y" aria-labelledby="mehr">
         <div className="wrap">
           <p className="eyebrow mb-6">Passend dazu</p>
           <h2 id="mehr" className="h2 max-w-[16ch]">Weitere <span className="serif-i silver-text">Leistungen.</span></h2>

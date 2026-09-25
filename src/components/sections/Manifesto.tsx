@@ -14,7 +14,7 @@ export function Manifesto() {
     { value: PLACES, decimals: 0, label: 'Orte im Einzugsgebiet', sub: 'rund um Lilienthal & Bremen' },
   ];
   return (
-    <section className="relative bg-ink section-y" aria-labelledby="manifest">
+    <section className="light relative rounded-t-[36px] bg-white section-y md:rounded-t-[64px]" aria-labelledby="manifest">
       <div className="wrap">
         <Reveal>
           <p className="eyebrow mb-8 flex items-center gap-3">

@@ -58,7 +58,7 @@ export function Header() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-[60] transition-[background-color,backdrop-filter,border-color] duration-500 ${
-          scrolled || menu ? 'border-b border-white/[0.07] bg-ink/75 backdrop-blur-xl' : 'border-b border-transparent bg-transparent'
+          scrolled || menu ? 'border-b border-white/[0.07] bg-ink/95 backdrop-blur-xl' : 'border-b border-transparent bg-transparent'
         }`}
         onMouseLeave={close}
       >

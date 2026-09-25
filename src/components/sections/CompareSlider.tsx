@@ -42,7 +42,7 @@ export function CompareSlider({
   return (
     <div
       ref={box}
-      className={`relative select-none overflow-hidden rounded-[22px] bg-graphite touch-pan-y ${className}`}
+      className={`on-photo relative select-none overflow-hidden rounded-[22px] bg-graphite touch-pan-y ${className}`}
       onPointerDown={(e) => {
         (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
         onTouch?.();

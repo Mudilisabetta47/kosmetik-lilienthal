@@ -13,7 +13,7 @@ import { OpenNow } from './OpenNow';
 export function Location({ headingLevel = 2 }: { headingLevel?: 1 | 2 }) {
   const H = `h${headingLevel}` as 'h1' | 'h2';
   return (
-    <section id="standort" className="relative scroll-mt-20 curtain bg-coal section-y" aria-labelledby="standort-title">
+    <section id="standort" className="relative scroll-mt-20 light curtain bg-paper section-y" aria-labelledby="standort-title">
       <div className="wrap">
         <p className="eyebrow mb-6 flex items-center gap-3">
           <span className="h-px w-8 bg-silver/60" aria-hidden="true" /> Standort
@@ -66,7 +66,7 @@ export function Location({ headingLevel = 2 }: { headingLevel?: 1 | 2 }) {
 
           <div className="grid gap-6 lg:col-span-7">
             <Parallax from={-3} to={3}>
-              <ImageReveal className="aspect-[16/10] w-full" radius={28} from="right" zoom={0.08}>
+              <ImageReveal className="on-photo aspect-[16/10] w-full" radius={28} from="right" zoom={0.08}>
                 <Img k="shopPorsches" alt="Das Studio autokosmetik Lilienthal in der Falkenberger Landstraße mit aufbereiteten Porsche 911 Fahrzeugen" fill sizes="(min-width:1024px) 58vw, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
                 <p className="absolute bottom-5 left-6 text-[0.95rem] font-medium">Unser Studio in der Falkenberger Landstraße</p>

@@ -62,7 +62,7 @@ export default function BremenPage() {
         <Btn href={SITE.phoneHref} variant="ghost" icon="phone" cursor="Anrufen">{SITE.phoneDisplay}</Btn>
       </PageHero>
 
-      <section className="bg-ink section-y" aria-labelledby="bremen-h">
+      <section className="light curtain bg-white section-y" aria-labelledby="bremen-h">
         <div className="wrap grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <div>
             <p className="eyebrow mb-6">Für Bremer Kunden</p>
@@ -110,7 +110,7 @@ export default function BremenPage() {
         </div>
       </section>
 
-      <section className="bg-ink section-y" aria-labelledby="leist-bremen">
+      <section className="light bg-white section-y" aria-labelledby="leist-bremen">
         <div className="wrap">
           <p className="eyebrow mb-6">Leistungen</p>
           <h2 id="leist-bremen" className="h2 max-w-[16ch]">Was wir für Ihr Fahrzeug tun <span className="serif-i silver-text">können.</span></h2>

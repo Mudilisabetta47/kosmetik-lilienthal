@@ -49,7 +49,7 @@ export function ServicesStory() {
   const current = flat[active] ?? flat[0];
 
   return (
-    <section id="leistungen" className="relative scroll-mt-20 bg-coal" aria-labelledby="leistungen-title">
+    <section id="leistungen" className="light relative scroll-mt-20 rounded-t-[36px] bg-white md:rounded-t-[64px]" aria-labelledby="leistungen-title">
       <div className="wrap pt-[clamp(88px,12vw,180px)]">
         <p className="eyebrow mb-6 flex items-center gap-3">
           <span className="h-px w-8 bg-silver/60" aria-hidden="true" /> Leistungen
@@ -70,7 +70,7 @@ export function ServicesStory() {
         {/* Sticky-Bühne (Desktop) */}
         <div className="relative hidden lg:block">
           <div className="sticky top-[96px] h-[calc(100svh-132px)] min-h-[520px] max-h-[820px]">
-            <div className="absolute inset-0 overflow-hidden rounded-[28px] bg-graphite">
+            <div className="absolute inset-0 overflow-hidden on-photo rounded-[28px] bg-graphite">
               {flat.map((s, i) => (
                 <div
                   key={s.slug}
@@ -86,7 +86,7 @@ export function ServicesStory() {
               {/* wandernder Glow */}
               <div
                 aria-hidden="true"
-                className="absolute -left-1/4 top-0 h-full w-3/4 bg-[radial-gradient(closest-side,rgba(52,154,214,0.22),transparent)] transition-transform duration-[1400ms] ease-out"
+                className="absolute -left-1/4 top-0 h-full w-3/4 bg-[radial-gradient(closest-side,rgba(255,255,255,0.10),transparent)] transition-transform duration-[1400ms] ease-out"
                 style={{ transform: `translate3d(${(active / Math.max(1, flat.length - 1)) * 90}%, ${active % 2 ? 12 : -12}%, 0)` }}
               />
               <div className="grain absolute inset-0" />

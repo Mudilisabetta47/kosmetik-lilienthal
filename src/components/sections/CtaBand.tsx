@@ -7,7 +7,7 @@ import { SplitText } from '@/components/motion/SplitText';
 export function CtaBand({ title = 'Bereit für\n*Glanz?*', service }: { title?: string; service?: string }) {
   return (
     <section className="relative overflow-hidden curtain bg-graphite section-y" aria-label="Termin anfragen">
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-[50vw] w-[80vw] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(52,154,214,0.14),transparent)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-[50vw] w-[80vw] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.07),transparent)]" />
       <div className="wrap relative flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
         <p className="display text-[clamp(2.6rem,9vw,9rem)]">
           <SplitText text={title} />

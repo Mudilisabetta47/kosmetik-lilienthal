@@ -8,8 +8,8 @@ import { SplitText } from '@/components/motion/SplitText';
 export function RequestSection({ headingLevel = 2, initialService }: { headingLevel?: 1 | 2; initialService?: string }) {
   const H = `h${headingLevel}` as 'h1' | 'h2';
   return (
-    <section id="termin" className="relative scroll-mt-20 overflow-hidden bg-ink section-y" aria-labelledby="termin-title">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-1/4 bottom-0 h-[60vw] w-[60vw] rounded-full bg-[radial-gradient(closest-side,rgba(52,154,214,0.16),transparent)]" />
+    <section id="termin" className="curtain scroll-mt-20 overflow-hidden bg-ink section-y" aria-labelledby="termin-title">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-1/4 bottom-0 h-[60vw] w-[60vw] rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.06),transparent)]" />
       <div className="wrap relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="eyebrow mb-6 flex items-center gap-3">

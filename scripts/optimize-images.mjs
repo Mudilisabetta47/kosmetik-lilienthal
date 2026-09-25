@@ -42,7 +42,7 @@ const MAP = {
   amgGtFront: ['amg-gt-front.jpg'],
   rangeRover: ['range-rover-sport.jpg'],
   // Street-View-Ausschnitt: unteren Rand mit Fremdtext abschneiden
-  shopPorsches: ['shop-front-porsches.png', 0.09],
+  shopPorsches: ['shop-front-porsches.png', 0.17],
   // Startbild (Kundenfoto): unteren Rand abschneiden (Straße + Wasserzeichen)
   shop: ['shop-front.png', 0.1],
 };
@@ -79,7 +79,7 @@ const icon = await sharp(path.join(RAW, 'logo.png')).extract({ left: 70, top: 24
 fs.writeFileSync('public/icon.png', icon);
 
 // Open-Graph-Bild 1200x630 aus dem Hero
-const svg = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1633" stop-opacity=".25"/><stop offset="1" stop-color="#0b1633" stop-opacity=".92"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><text x="64" y="500" font-family="Helvetica, Arial, sans-serif" font-size="66" font-weight="700" fill="#eef2f8">autokosmetik Lilienthal</text><text x="64" y="556" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#8fd0f5">Premium Fahrzeugaufbereitung · Lilienthal / Bremen</text></svg>`);
+const svg = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1730" stop-opacity=".25"/><stop offset="1" stop-color="#0d1730" stop-opacity=".92"/></linearGradient></defs><rect width="1200" height="630" fill="url(#g)"/><text x="64" y="500" font-family="Helvetica, Arial, sans-serif" font-size="66" font-weight="700" fill="#eef2f8">autokosmetik Lilienthal</text><text x="64" y="556" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#8fd0f5">Premium Fahrzeugaufbereitung · Lilienthal / Bremen</text></svg>`);
 await sharp(path.join(RAW, 'shop-front.png')).resize(1200, 630, { fit: 'cover', position: 'attention' }).composite([{ input: svg }]).jpeg({ quality: 84 }).toFile('public/og.jpg');
 
 const ts = `// AUTO-GENERIERT von scripts/optimize-images.mjs – nicht von Hand ändern.\nexport type ImageAsset = { src: string; width: number; height: number; blurDataURL: string };\nexport const IMAGES = ${JSON.stringify(out, null, 2)} as const satisfies Record<string, ImageAsset>;\nexport type ImageKey = keyof typeof IMAGES;\n`;

@@ -3,7 +3,6 @@ import { Btn } from '@/components/ui/Btn';
 import { Icon } from '@/components/ui/Icon';
 import { CountUp } from '@/components/motion/CountUp';
 import { Reveal } from '@/components/motion/Reveal';
-import { Img } from '@/components/ui/Img';
 
 /**
  * Google-Bewertungen. Es gibt nur den echten Durchschnittswert (4,8 / 5) –
@@ -18,11 +17,7 @@ export function Reviews() {
     </span>
   );
   return (
-    <section className="relative isolate overflow-hidden bg-ink section-y" aria-labelledby="reviews-title">
-      <div className="absolute inset-0 -z-10 opacity-[0.16]">
-        <Img k="hero" alt="" fill sizes="100vw" className="object-cover" />
-      </div>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink via-ink/80 to-ink" />
+    <section className="light curtain isolate overflow-hidden bg-white section-y" aria-labelledby="reviews-title">
       <div className="wrap text-center">
         <Reveal>
           <p className="eyebrow mb-6">Google Bewertungen</p>
@@ -39,9 +34,9 @@ export function Reviews() {
             <span className="text-[clamp(1.4rem,4vw,3.4rem)] font-medium text-mute">/ 5</span>
           </p>
           <div className="relative mt-6" role="img" aria-label="4,8 von 5 Sternen">
-            <Stars className="text-white/15" />
+            <Stars className="text-[#14224a]/15" />
             <div className="absolute inset-y-0 left-0 overflow-hidden" style={{ width: '96%' }}>
-              <Stars className="w-max text-silver" />
+              <Stars className="w-max text-brand" />
             </div>
           </div>
           <p className="mt-6 text-[1.05rem] text-bone/85">Bewertungen auf Google</p>

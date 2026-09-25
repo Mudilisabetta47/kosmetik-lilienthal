@@ -35,7 +35,7 @@ export default function LeistungenPage() {
         <Btn href="/preise" variant="ghost" cursor="Preise">Preise ansehen</Btn>
       </PageHero>
 
-      <section className="bg-ink pb-24 pt-10 md:pb-32">
+      <section className="light curtain bg-white pb-24 pt-20 md:pb-32 md:pt-28">
         <div className="wrap">
           {ORDER.map((g) => (
             <div key={g} className="mb-24 last:mb-0 md:mb-36">

@@ -44,7 +44,7 @@ export default function HomePage() {
       <Reviews />
       <Location />
 
-      <section id="faq" className="relative scroll-mt-20 bg-ink section-y" aria-labelledby="faq-title">
+      <section id="faq" className="light relative scroll-mt-20 bg-white section-y" aria-labelledby="faq-title">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <p className="eyebrow mb-6 flex items-center gap-3">

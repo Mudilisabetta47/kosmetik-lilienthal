@@ -5,10 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: '#0b1633',
-        coal: '#0f1d40',
-        graphite: '#14244f',
-        steel: '#1b2d5f',
+        ink: '#0d1730',
+        coal: '#121d3b',
+        graphite: '#182552',
+        steel: '#1f2e5c',
         line: 'rgba(255,255,255,0.09)',
         paper: '#eef2f8',
         paper2: '#e1e8f2',

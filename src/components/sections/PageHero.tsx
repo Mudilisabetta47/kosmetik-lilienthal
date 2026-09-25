@@ -33,7 +33,7 @@ export function PageHero({
           <Img k={img} alt={imgAlt} fill priority sizes="100vw" position={imgPosition} className="object-cover" />
         </div>
       </Parallax>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(11,22,51,0.9),rgba(11,22,51,0.55)_55%,rgba(11,22,51,0.25))] max-md:bg-[linear-gradient(180deg,rgba(11,22,51,0.5),rgba(11,22,51,0.9))]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(13,23,48,0.9),rgba(13,23,48,0.55)_55%,rgba(13,23,48,0.25))] max-md:bg-[linear-gradient(180deg,rgba(13,23,48,0.5),rgba(13,23,48,0.9))]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-1/3 bg-gradient-to-t from-ink to-transparent" />
       <div className="grain absolute inset-0 -z-10" />
 

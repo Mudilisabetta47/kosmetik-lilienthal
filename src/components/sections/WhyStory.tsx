@@ -8,10 +8,10 @@ import { SplitText } from '@/components/motion/SplitText';
 /** Szene 8 – Warum professionelle Fahrzeugaufbereitung? Editorial: Bildfläche mit Parallax + sechs Argumente. */
 export function WhyStory() {
   return (
-    <section className="relative overflow-hidden bg-ink section-y" aria-labelledby="why-title">
+    <section className="light curtain overflow-hidden bg-white section-y" aria-labelledby="why-title">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-1/4 top-1/4 h-[70vw] w-[70vw] rounded-full bg-[radial-gradient(closest-side,rgba(52,154,214,0.16),transparent)]"
+        className="pointer-events-none absolute -right-1/4 top-1/4 h-[70vw] w-[70vw] rounded-full bg-[radial-gradient(closest-side,rgba(255,255,255,0.06),transparent)]"
       />
       <div className="wrap relative">
         <p className="eyebrow mb-6 flex items-center gap-3">

@@ -41,7 +41,7 @@ export function Hero() {
       </motion.div>
 
       {/* Verläufe: Lesbarkeit links, Übergang nach unten */}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,22,51,0.9)_0%,rgba(11,22,51,0.58)_42%,rgba(11,22,51,0.08)_100%)] max-md:bg-[linear-gradient(180deg,rgba(11,22,51,0.55)_0%,rgba(11,22,51,0.72)_55%,rgba(11,22,51,0.94)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(13,23,48,0.9)_0%,rgba(13,23,48,0.58)_42%,rgba(13,23,48,0.08)_100%)] max-md:bg-[linear-gradient(180deg,rgba(13,23,48,0.55)_0%,rgba(13,23,48,0.72)_55%,rgba(13,23,48,0.94)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-ink via-ink/70 to-transparent" />
       <motion.div className="absolute inset-0 bg-ink" style={{ opacity: veil }} aria-hidden="true" />
 

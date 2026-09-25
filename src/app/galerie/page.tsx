@@ -33,12 +33,12 @@ export default function GaleriePage() {
         <Btn href="/termin" cursor="Termin">Ihr Fahrzeug anmelden</Btn>
       </PageHero>
 
-      <section className="bg-ink pb-24 pt-8 md:pb-40" aria-label="Fahrzeuggalerie">
+      <section className="light curtain bg-white pb-24 pt-20 md:pb-40 md:pt-28" aria-label="Fahrzeuggalerie">
         <div className="wrap">
           <ul className="columns-1 gap-5 sm:columns-2 lg:columns-3">
             {GALLERY_ALL.map((g, i) => (
               <Reveal as="li" key={g.img} blur={false} delay={(i % 3) * 0.06} className="mb-5 break-inside-avoid">
-                <figure className="img-zoom group relative overflow-hidden rounded-[22px] bg-graphite" data-cursor="Ansehen">
+                <figure className="img-zoom on-photo group relative overflow-hidden rounded-[22px] bg-graphite" data-cursor="Ansehen">
                   <div className={`relative ${ASPECTS[i % ASPECTS.length]}`}>
                     <Img k={g.img} alt={`${g.title} – ${g.sub}`} fill sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent" />

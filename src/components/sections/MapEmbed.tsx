@@ -11,7 +11,7 @@ import { Icon } from '@/components/ui/Icon';
 export function MapEmbed() {
   const [on, setOn] = useState(false);
   return (
-    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[28px] border border-white/[0.09] bg-graphite sm:aspect-[16/8]">
+    <div className="on-photo relative aspect-[16/9] w-full overflow-hidden rounded-[28px] border border-white/[0.09] bg-graphite sm:aspect-[16/8]">
       {on ? (
         <iframe
           title="Karte: autokosmetik Lilienthal, Falkenberger Landstraße 75, 28865 Lilienthal"

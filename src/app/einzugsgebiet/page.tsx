@@ -49,7 +49,7 @@ export default function EinzugsgebietPage() {
         <Btn href={SITE.mapsRoute} variant="ghost" icon="up-right" cursor="Route">Route planen</Btn>
       </PageHero>
 
-      <section className="bg-ink section-y" aria-labelledby="orte">
+      <section className="light curtain bg-white section-y" aria-labelledby="orte">
         <div className="wrap">
           <p className="eyebrow mb-6">Orte</p>
           <h2 id="orte" className="h2 max-w-[20ch]">Kundinnen und Kunden aus der ganzen <span className="serif-i silver-text">Region.</span></h2>
@@ -63,7 +63,7 @@ export default function EinzugsgebietPage() {
                 <p className="eyebrow mb-5">{g.area}</p>
                 <ul className="flex flex-wrap gap-2.5">
                   {g.places.map((p) => (
-                    <li key={p} className={`rounded-full border px-4 py-2 text-[0.95rem] ${p === 'Lilienthal' ? 'border-bone bg-bone font-semibold text-ink' : 'border-white/15 text-bone/90'}`}>
+                    <li key={p} className={`rounded-full border px-4 py-2 text-[0.95rem] ${p === 'Lilienthal' ? 'border-brand bg-brand font-semibold text-ink' : 'border-white/15 text-bone/90'}`}>
                       {p}
                     </li>
                   ))}
@@ -111,7 +111,7 @@ export default function EinzugsgebietPage() {
         </div>
       </section>
 
-      <section className="bg-ink section-y" aria-labelledby="faq-region">
+      <section className="light bg-white section-y" aria-labelledby="faq-region">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
             <p className="eyebrow mb-6">FAQ</p>

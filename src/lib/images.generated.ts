@@ -190,8 +190,8 @@ export const IMAGES = {
   "shopPorsches": {
     "src": "/img/shopPorsches.webp",
     "width": 1984,
-    "height": 1037,
-    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAwCdASoUAAoAPu1oqk6ppiQiMAgBMB2JYwCdMoADS/fph3CVUHAA4A3QsUU0liBDvtVaeRg2ZaFBfy8F7ORx8zGkcAAA"
+    "height": 946,
+    "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoUAAoAPu1kqU2ppaQiMAgBMB2JYwCdACHEfw5BzlUAAOAN0J3AoxtYYLERI3R+1bpYZre/u3AE6UneIDxbZ0H4ytMfAAAA"
   },
   "shop": {
     "src": "/img/shop.webp",
