@@ -148,3 +148,8 @@ input[type='date'].field { color-scheme: dark; min-height: 52px; }
   }
 }
 @media (max-width: 767px) { :root { --header-h: 64px; } }
+
+/* Touch / schmale Viewports: nie ein Blur-Filter auf Texten (kein Blur-to-Sharp mobil) */
+@media (hover: none), (max-width: 767px) {
+  [data-reveal] { filter: none !important; }
+}

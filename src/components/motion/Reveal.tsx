@@ -32,13 +32,19 @@ export function Reveal({
   }
   const d = profile === 'lite' ? distance * 0.6 : distance;
   const from = { x: dir === 'left' ? -d : dir === 'right' ? d : 0, y: dir === 'up' ? d : 0 };
-  const useBlur = blur && profile === 'full';
   return (
     <Tag
       data-reveal
       className={className}
-      initial={{ opacity: 0, ...from, ...(useBlur ? { filter: 'blur(8px)' } : {}) }}
-      whileInView={{ opacity: 1, x: 0, y: 0, ...(useBlur ? { filter: 'blur(0px)' } : {}) }}
+      initial={{ opacity: 0, ...from, ...(blur ? { filter: 'blur(8px)' } : {}) }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        y: 0,
+        // Blur immer zurücksetzen (auch nach dem Wechsel des Bewegungsprofils) und danach ganz entfernen –
+        // ein stehengebliebener filter macht Text auf Mobilgeräten unscharf.
+        ...(blur ? { filter: 'blur(0px)', transitionEnd: { filter: 'none' } } : {}),
+      }}
       viewport={{ once: true, margin: '0px 0px -10% 0px' }}
       transition={{ duration: profile === 'lite' ? 0.7 : 1.05, delay, ease: EASE }}
     >
