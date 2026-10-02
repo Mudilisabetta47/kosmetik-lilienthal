@@ -25,3 +25,14 @@ npm run images       # raw/ → public/img/*.webp + Blur-Platzhalter (raw/ ist n
 - `/bewerten` – Kurzlink zum Google-Bewertungsformular (für QR/SMS)
 - Ratgeber: `src/lib/articles.ts` · Ortsseiten: `src/lib/places.ts`
 - Optional: `NEXT_PUBLIC_REVIEW_COUNT` (echte Anzahl Google-Bewertungen) aktiviert AggregateRating im Markup
+
+## Deployment
+**Vercel:** Framework Next.js, Standard-Befehle (`npm ci`, `npm run build`) – nichts weiter nötig.
+
+**Cloudflare Workers (OpenNext):** `wrangler.jsonc` und `open-next.config.ts` liegen im Repo.
+Im Cloudflare-Projekt (Settings → Build) eintragen:
+- Build command: `npx opennextjs-cloudflare build`
+- Deploy command: `npx opennextjs-cloudflare deploy`
+- Der Worker-Name in `wrangler.jsonc` (`kosmetik-lilienthal`) muss dem Projektnamen entsprechen – an zwei Stellen (`name` und `services[].service`).
+- `NEXT_PUBLIC_*`-Variablen als Build-Variablen, `RESEND_API_KEY`/`REQUEST_TO_EMAIL`/`REQUEST_FROM_EMAIL` als Secrets (Runtime).
+- Lokal testen: `npm run preview:cf`

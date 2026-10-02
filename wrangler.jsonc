@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Name MUSS dem Worker-Namen im Cloudflare-Projekt entsprechen (Settings → Builds → Project name).
+  "name": "kosmetik-lilienthal",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "kosmetik-lilienthal" }],
+  "images": { "binding": "IMAGES" },
+  "observability": { "enabled": true }
+}
