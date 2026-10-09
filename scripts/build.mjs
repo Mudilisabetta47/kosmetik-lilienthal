@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 
 const env = process.env;
 const target = env.DEPLOY_TARGET ?? (env.VERCEL ? 'next' : env.WORKERS_CI || env.CF_PAGES ? 'cloudflare' : 'next');
+if (target === 'cloudflare') env.IMAGE_MODE = 'static';
 const steps =
   target === 'cloudflare'
     ? [

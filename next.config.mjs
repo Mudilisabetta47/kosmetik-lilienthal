@@ -1,13 +1,18 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Auf Cloudflare (siehe scripts/build.mjs) liefern wir vorab erzeugte Bildvarianten statt /_next/image.
+const STATIC_IMAGES = process.env.IMAGE_MODE === 'static';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: path.dirname(fileURLToPath(import.meta.url)),
   poweredByHeader: false,
   trailingSlash: false,
-  images: {
+  images: STATIC_IMAGES
+    ? { loader: 'custom', loaderFile: './src/lib/image-loader.ts' }
+    : {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [390, 640, 828, 1080, 1440, 1920, 2560],
     imageSizes: [96, 160, 256, 384],

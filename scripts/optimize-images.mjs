@@ -6,6 +6,8 @@ import path from 'node:path';
 
 const RAW = 'raw';
 const OUT = 'public/img';
+const LADDER = [480, 828, 1280, 1920];
+for (const f of fs.existsSync(OUT) ? fs.readdirSync(OUT) : []) if (/-\d+\.webp$/.test(f)) fs.unlinkSync(path.join(OUT, f));
 fs.mkdirSync(OUT, { recursive: true });
 
 // key -> [Quelldatei, optionaler Zuschnitt (Anteil unten abschneiden)]
@@ -68,6 +70,10 @@ for (const [key, [file, cropBottom]] of Object.entries(MAP)) {
     img = img.resize({ width: maxW });
   }
   await img.webp({ quality: 82, effort: 5 }).toFile(path.join(OUT, `${key}.webp`));
+  // Breiten-Varianten für den statischen Bild-Loader (Cloudflare) – nur kleiner als das Original
+  for (const vw of LADDER) {
+    if (vw < w) await sharp(path.join(OUT, `${key}.webp`)).resize({ width: vw }).webp({ quality: 78, effort: 5 }).toFile(path.join(OUT, `${key}-${vw}.webp`));
+  }
   const blur = await sharp(path.join(OUT, `${key}.webp`))
     .resize(20)
     .blur(1.2)
