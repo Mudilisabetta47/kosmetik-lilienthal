@@ -30,9 +30,11 @@ npm run images       # raw/ → public/img/*.webp + Blur-Platzhalter (raw/ ist n
 **Vercel:** Framework Next.js, Standard-Befehle (`npm ci`, `npm run build`) – nichts weiter nötig.
 
 **Cloudflare Workers (OpenNext):** `wrangler.jsonc` und `open-next.config.ts` liegen im Repo.
-Im Cloudflare-Projekt (Settings → Build) eintragen:
-- Build command: `npx opennextjs-cloudflare build`
-- Deploy command: `npx opennextjs-cloudflare deploy`
+`npm run build` erkennt Cloudflare automatisch (Umgebungsvariable `WORKERS_CI`/`CF_PAGES`) und führt dort
+`opennextjs-cloudflare build` + `populateCache local` aus; auf Vercel und lokal bleibt es `next build`
+(Skript `scripts/build.mjs`, erzwingen mit `DEPLOY_TARGET=cloudflare|next`).
+Im Cloudflare-Projekt reichen die Standard-Befehle:
+- Build command: `npm run build` · Deploy command: `npx wrangler deploy`
 - Der Worker-Name in `wrangler.jsonc` (`kosmetik-lilienthal`) muss dem Projektnamen entsprechen – an zwei Stellen (`name` und `services[].service`).
 - `NEXT_PUBLIC_*`-Variablen als Build-Variablen, `RESEND_API_KEY`/`REQUEST_TO_EMAIL`/`REQUEST_FROM_EMAIL` als Secrets (Runtime).
 - Lokal testen: `npm run preview:cf`
