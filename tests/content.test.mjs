@@ -183,7 +183,7 @@ test('Marketing-Dateien vorhanden (QR-Karte, Google-Texte, Ads)', () => {
   assert.ok(fs.existsSync('src/app/bewerten/route.ts'));
 });
 
-test('Marken-Sektion: genau die sieben genannten Marken, keine Logo-Dateien', () => {
-  assert.deepEqual([...BRANDS], ['BMW', 'Chevrolet', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover']);
+test('Marken-Sektion: genau die acht genannten Marken, keine Logo-Dateien', () => {
+  assert.deepEqual([...BRANDS], ['BMW', 'Chevrolet', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover']);
   assert.ok(!fs.readdirSync('public').some((f) => /bmw|porsche|mercedes|ford|chevrolet|lamborghini|range/i.test(f)), 'keine Herstellerlogos im Repo');
 });

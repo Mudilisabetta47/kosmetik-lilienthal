@@ -727,7 +727,7 @@ export const SALE_SCOPE = [
 ] as const;
 
 /** Marken der bisher aufbereiteten Kundenfahrzeuge (nur Namen – keine Logos, siehe Brands.tsx) */
-export const BRANDS = ['BMW', 'Chevrolet', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover'] as const;
+export const BRANDS = ['BMW', 'Chevrolet', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover'] as const;
 
 export const STORY_SCENES = [
   {
