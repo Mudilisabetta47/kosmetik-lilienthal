@@ -1,0 +1,5 @@
+Logos der Marken aus dem Screenshot.
+Mercedes-Benz und AMG sind als separate Dateien enthalten.
+Ferrari ist enthalten, aber in der geprüften Kundengalerie nicht als Auftrag belegt.
+PNG-Dateien haben einen transparenten Hintergrund. SVG-Dateien sind zusätzlich enthalten, soweit beschafft.
+Die Dateien wurden unverändert aus öffentlichen Logo-Sammlungen übernommen; Varianten können aus unterschiedlichen Jahren stammen. Quellen siehe quellen.json.

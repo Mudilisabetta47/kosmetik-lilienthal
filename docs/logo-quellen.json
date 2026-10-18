@@ -1,0 +1,73 @@
+[
+  {
+    "marke": "BMW",
+    "datei": "bmw.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/bmw.png",
+    "ursprung": "https://www.carlogos.org/car-logos/bmw-logo-2020-gray.png"
+  },
+  {
+    "marke": "Chevrolet",
+    "datei": "chevrolet.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/chevrolet.png",
+    "ursprung": "https://www.carlogos.org/logo/Chevrolet-logo-2013-2560x1440.png"
+  },
+  {
+    "marke": "Ferrari",
+    "datei": "ferrari.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/ferrari.png",
+    "ursprung": "https://www.carlogos.org/car-logos/ferrari-logo-2002-640.png"
+  },
+  {
+    "marke": "Ford",
+    "datei": "ford.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/ford.png",
+    "ursprung": "https://www.carlogos.org/car-logos/ford-logo-2017-640.png"
+  },
+  {
+    "marke": "Lamborghini",
+    "datei": "lamborghini.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/lamborghini.png",
+    "ursprung": "https://www.carlogos.org/car-logos/lamborghini-logo-1998-640.png"
+  },
+  {
+    "marke": "Mercedes-AMG",
+    "datei": "mercedes-amg.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/mercedes-amg.png",
+    "ursprung": "https://www.carlogos.org/logo/AMG-logo-black-1920x1080.png"
+  },
+  {
+    "marke": "Mercedes-Benz",
+    "datei": "mercedes-benz.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/mercedes-benz.png",
+    "ursprung": "https://www.carlogos.org/logo/Mercedes-Benz-logo-2011-1920x1080.png"
+  },
+  {
+    "marke": "Porsche",
+    "datei": "porsche.png",
+    "quelle": "https://raw.githubusercontent.com/filippofilip95/car-logos-dataset/master/logos/original/porsche.png",
+    "ursprung": "https://www.carlogos.org/car-logos/porsche-logo-2014-full-640.png"
+  },
+  {
+    "marke": "Range Rover",
+    "datei": "range-rover.svg",
+    "quelle": "https://upload.wikimedia.org/wikipedia/commons/4/48/Range_Rover.svg",
+    "urheber": "Swapnil1101",
+    "quellseite": "https://commons.wikimedia.org/wiki/File:Range_Rover.svg"
+  },
+  {
+    "datei": "bmw.svg",
+    "quelle": "https://github.com/vehiclespecs/brand-logos/blob/main/bmw-logo.svg"
+  },
+  {
+    "datei": "ferrari.svg",
+    "quelle": "https://github.com/vehiclespecs/brand-logos/blob/main/ferrari-logo.svg"
+  },
+  {
+    "datei": "mercedes-benz.svg",
+    "quelle": "https://github.com/vehiclespecs/brand-logos/blob/main/mercedes-benz-logo.svg"
+  },
+  {
+    "datei": "porsche.svg",
+    "quelle": "https://github.com/vehiclespecs/brand-logos/blob/main/porsche-logo.svg"
+  }
+]

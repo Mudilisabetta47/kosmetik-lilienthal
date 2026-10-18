@@ -7,7 +7,7 @@ import * as data from '../src/lib/data.ts';
 import { PLACES } from '../src/lib/places.ts';
 import { ARTICLES } from '../src/lib/articles.ts';
 
-const { BRANDS, SERVICES, SITE, GALLERY, GALLERY_ALL, BEFORE_AFTER, STORY_SCENES, EXTRA_IMAGES, REGION_GROUPS, STATIC_ROUTES, HOME_FAQS, PRICE_NOTE, NAV } = data;
+const { BRANDS, BRAND_LOGO_KEYS, BRAND_DISCLAIMER, SERVICES, SITE, GALLERY, GALLERY_ALL, BEFORE_AFTER, STORY_SCENES, EXTRA_IMAGES, REGION_GROUPS, STATIC_ROUTES, HOME_FAQS, PRICE_NOTE, NAV } = data;
 const generated = fs.readFileSync('src/lib/images.generated.ts', 'utf8');
 const imageKeys = new Set([...generated.matchAll(/^ {2}"([A-Za-z0-9]+)": \{/gm)].map((m) => m[1]));
 
@@ -183,7 +183,12 @@ test('Marketing-Dateien vorhanden (QR-Karte, Google-Texte, Ads)', () => {
   assert.ok(fs.existsSync('src/app/bewerten/route.ts'));
 });
 
-test('Marken-Sektion: genau die acht genannten Marken, keine Logo-Dateien', () => {
+test('Marken-Sektion: acht Marken, jede mit vorhandener Logo-Datei, Rechte-Hinweis und dokumentierter Herkunft', () => {
   assert.deepEqual([...BRANDS], ['BMW', 'Chevrolet', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover']);
-  assert.ok(!fs.readdirSync('public').some((f) => /bmw|porsche|mercedes|ford|chevrolet|lamborghini|range/i.test(f)), 'keine Herstellerlogos im Repo');
+  for (const b of BRANDS) {
+    assert.ok(BRAND_LOGO_KEYS[b]?.length >= 1, `Logo-Zuordnung fehlt: ${b}`);
+    for (const k of BRAND_LOGO_KEYS[b]) assert.ok(fs.existsSync(`public/brands/${k}.webp`), `Logo-Datei fehlt: ${k}`);
+  }
+  assert.match(BRAND_DISCLAIMER, /weder Partner noch Vertragshändler/);
+  assert.ok(fs.existsSync('docs/logo-quellen.json'), 'Herkunftsnachweis der Logos fehlt');
 });

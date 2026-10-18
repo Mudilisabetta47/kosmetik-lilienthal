@@ -38,3 +38,5 @@ Im Cloudflare-Projekt reichen die Standard-Befehle:
 - Der Worker-Name in `wrangler.jsonc` (`kosmetik-lilienthal`) muss dem Projektnamen entsprechen – an zwei Stellen (`name` und `services[].service`).
 - `NEXT_PUBLIC_*`-Variablen als Build-Variablen, `RESEND_API_KEY`/`REQUEST_TO_EMAIL`/`REQUEST_FROM_EMAIL` als Secrets (Runtime).
 - Lokal testen: `npm run preview:cf`
+
+- Markenlogos: `raw/brands` (vom Inhaber bereitgestellt) → `npm run` `node scripts/optimize-brands.mjs`; Herkunft siehe `docs/logo-quellen.json`.

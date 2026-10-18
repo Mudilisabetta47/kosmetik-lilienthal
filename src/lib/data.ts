@@ -729,6 +729,21 @@ export const SALE_SCOPE = [
 /** Marken der bisher aufbereiteten Kundenfahrzeuge (nur Namen – keine Logos, siehe Brands.tsx) */
 export const BRANDS = ['BMW', 'Chevrolet', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover'] as const;
 
+/** Welche Logo-Dateien (public/brands) zu welcher Marke gehören */
+export const BRAND_LOGO_KEYS: Record<(typeof BRANDS)[number], string[]> = {
+  BMW: ['bmw'],
+  Chevrolet: ['chevrolet'],
+  Ferrari: ['ferrari'],
+  Ford: ['ford'],
+  Lamborghini: ['lamborghini'],
+  'Mercedes-Benz / AMG': ['mercedes-benz', 'mercedes-amg'],
+  Porsche: ['porsche'],
+  'Range Rover': ['range-rover'],
+};
+
+export const BRAND_DISCLAIMER =
+  'Marken- und Logorechte liegen bei den jeweiligen Herstellern. autokosmetik Lilienthal ist weder Partner noch Vertragshändler der genannten Marken; die Logos zeigen lediglich, welche Fahrzeuge wir bereits aufbereitet haben.';
+
 export const STORY_SCENES = [
   {
     kicker: '01 — Lack',
