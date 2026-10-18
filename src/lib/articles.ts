@@ -470,8 +470,8 @@ export const ARTICLES: Article[] = [
     minutes: 4,
     kicker: 'Innenraum',
     lead: 'Flecken, Abrieb, trockenes Leder: So reinigen und pflegen Profis Sitze und Türverkleidungen – und worauf Sie bei Hausmitteln achten sollten.',
-    img: 'interiorAfter',
-    imgPosition: '85% 90%',
+    img: 'ferrariInnen',
+    imgPosition: '50% 55%',
     services: ['polster-leder', 'innenreinigung', 'ozon-geruchsentfernung'],
     sections: [
       {

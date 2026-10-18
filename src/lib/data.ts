@@ -322,9 +322,9 @@ export const SERVICES: Service[] = [
     short: 'Polsterreinigung und Lederpflege inklusive Imprägnierung.',
     priceFrom: 70,
     priceNote: 'ab 70 €',
-    img: 'interiorAfter',
-    imgPosition: '85% 95%',
-    heroAlt: 'Gepflegte Ledersitze im Innenraum eines Fahrzeugs',
+    img: 'ferrariInnen',
+    imgPosition: '50% 55%',
+    heroAlt: 'Gepflegter roter Ledersportsitz-Innenraum eines Ferrari F430 Spider',
     h1: `Polster- & Lederreinigung in Lilienthal – für ${REGION}`,
     metaTitle: 'Polster- & Lederreinigung Lilienthal & Bremen | ab 70 €',
     metaDescription:
@@ -593,6 +593,8 @@ export const PRICE_NOTE = {
 } as const;
 
 export const GALLERY: { img: string; title: string; sub: string }[] = [
+  { img: 'ferrariSeite', title: 'Ferrari F430 Spider', sub: 'Aufbereitet in Lilienthal' },
+  { img: 'ferrariPortrait', title: 'Ferrari F430 Spider', sub: 'Nach der Aufbereitung vor dem Studio' },
   { img: 'corvetteSeite', title: 'Chevrolet Corvette', sub: 'Aufbereitet in Lilienthal' },
   { img: 'corvetteFront', title: 'Chevrolet Corvette', sub: 'Frontansicht nach der Aufbereitung' },
   { img: 'taycan', title: 'Porsche Taycan', sub: 'Aufbereitet in Lilienthal' },
@@ -612,6 +614,9 @@ export const GALLERY: { img: string; title: string; sub: string }[] = [
 /** Vollständige Galerie (Unterseite /galerie) mit Original-Beschriftungen */
 export const GALLERY_ALL: { img: string; title: string; sub: string }[] = [
   ...GALLERY,
+  { img: 'ferrariFront', title: 'Ferrari F430 Spider', sub: 'Frontansicht nach der Aufbereitung' },
+  { img: 'ferrariHeck', title: 'Ferrari F430 Spider', sub: 'Heckansicht nach der Aufbereitung' },
+  { img: 'ferrariInnen', title: 'Ferrari F430 Spider', sub: 'Innenraum nach der Aufbereitung' },
   { img: 'corvetteHeck', title: 'Chevrolet Corvette', sub: 'Heckansicht nach der Aufbereitung' },
   { img: 'carreraS', title: 'Porsche 911 Carrera S', sub: 'Aufbereitung vor dem Studio' },
   { img: 'porsche991', title: 'Porsche 991', sub: 'Hochglanz nach Lackaufbereitung' },

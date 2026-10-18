@@ -22,6 +22,12 @@ const MAP = {
   sealBefore: ['before-seal.jpg'],
   taycan: ['taycan.jpg'],
   // Corvette: Kennzeichen vorab per scripts/mask-plates.mjs verdeckt
+  // Ferrari: lesbares Kennzeichen vorab per scripts/mask-ferrari.mjs überdeckt
+  ferrariSeite: ['ferrari-seite.jpg'],
+  ferrariPortrait: ['ferrari-portrait.jpg'],
+  ferrariInnen: ['ferrari-innen.jpg'],
+  ferrariHeck: ['ferrari-heck.jpg'],
+  ferrariFront: ['ferrari-front.jpg'],
   corvetteSeite: ['corvette-seite.jpg'],
   corvetteFront: ['corvette-front.jpg'],
   corvetteHeck: ['corvette-heck.jpg'],

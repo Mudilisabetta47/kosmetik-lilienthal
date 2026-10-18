@@ -55,6 +55,36 @@ export const IMAGES = {
     "height": 1440,
     "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoUAA8APu1qrU8ppiQiMAgBMB2JQBadAtsislY730eksAD80IO1o5vniDIaxgA20Uj6Cote/rekm4Dt2Zrur3NrxgOveCTEfTxxqwFcqEgAAA=="
   },
+  "ferrariSeite": {
+    "src": "/img/ferrariSeite.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABwAwCdASoUAA8APu1oqk6ppiQiMAgBMB2JYwAAKZUH+4QV9JwA/HCgdYRVOlurXaXCUtnrFI9HRKOLI6EWdtdv4WXFlVAA"
+  },
+  "ferrariPortrait": {
+    "src": "/img/ferrariPortrait.webp",
+    "width": 1200,
+    "height": 1600,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBQCdASoUABsAPu1kqU2ppaQiMAgBMB2JQBajW6/ZCUVrVYBj+6XbmSa2DagwQ+ckpAD7mmv0HT9JYGWZP/CwqcIe5V2583yY6mz+1XX80NbeYdGrfY7v76cxmbjPb8nMHMvKM28Xss0d8hAAAA=="
+  },
+  "ferrariInnen": {
+    "src": "/img/ferrariInnen.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwBACdASoUAA8APu1kqk4ppaQiMAgBMB2JbAC7MoADDMc+txePtu0KrwAAzDUhTUcZO811KPZA6UbMKKc/l7Wuqpn/T5KFgikNmfkH1mGrg3tUgAA="
+  },
+  "ferrariHeck": {
+    "src": "/img/ferrariHeck.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoUAA8APu1mq04ppaQiMAgBMB2JZQDA3BP5/Ew7FQYRWACtfbOcHnYKfxAuAPO1wH/dJovPAGa8rOKgJJqnZkXSBYuAAA=="
+  },
+  "ferrariFront": {
+    "src": "/img/ferrariFront.webp",
+    "width": 1600,
+    "height": 1200,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACQAwCdASoUAA8APu1iqk2ppaQiMAgBMB2JZQCdABQQhr9xKI5wAP653bnFxc1/SaDiADHOC2C7KHZjpQuI6OWuTF0vBKhxT4gAAA=="
+  },
   "corvetteSeite": {
     "src": "/img/corvetteSeite.webp",
     "width": 1600,
