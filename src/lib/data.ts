@@ -726,6 +726,9 @@ export const SALE_SCOPE = [
   { title: 'Versiegelung', text: 'Optional für lang anhaltenden Glanz.' },
 ] as const;
 
+/** Marken der bisher aufbereiteten Kundenfahrzeuge (nur Namen – keine Logos, siehe Brands.tsx) */
+export const BRANDS = ['BMW', 'Chevrolet', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover'] as const;
+
 export const STORY_SCENES = [
   {
     kicker: '01 — Lack',

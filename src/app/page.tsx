@@ -4,6 +4,7 @@ import { faqLd, pageMeta } from '@/lib/seo';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { Hero } from '@/components/sections/Hero';
 import { Manifesto } from '@/components/sections/Manifesto';
+import { Brands } from '@/components/sections/Brands';
 import { StickyStory } from '@/components/sections/StickyStory';
 import { ServicesStory } from '@/components/sections/ServicesStory';
 import { PriceTable } from '@/components/sections/PriceTable';
@@ -31,6 +32,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Manifesto />
+      <Brands />
       <StickyStory />
       <ServicesStory />
 

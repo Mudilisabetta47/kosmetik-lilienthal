@@ -7,7 +7,7 @@ import * as data from '../src/lib/data.ts';
 import { PLACES } from '../src/lib/places.ts';
 import { ARTICLES } from '../src/lib/articles.ts';
 
-const { SERVICES, SITE, GALLERY, GALLERY_ALL, BEFORE_AFTER, STORY_SCENES, EXTRA_IMAGES, REGION_GROUPS, STATIC_ROUTES, HOME_FAQS, PRICE_NOTE, NAV } = data;
+const { BRANDS, SERVICES, SITE, GALLERY, GALLERY_ALL, BEFORE_AFTER, STORY_SCENES, EXTRA_IMAGES, REGION_GROUPS, STATIC_ROUTES, HOME_FAQS, PRICE_NOTE, NAV } = data;
 const generated = fs.readFileSync('src/lib/images.generated.ts', 'utf8');
 const imageKeys = new Set([...generated.matchAll(/^ {2}"([A-Za-z0-9]+)": \{/gm)].map((m) => m[1]));
 
@@ -181,4 +181,9 @@ test('Ratgeber: Artikel vollständig, eindeutig und mit gültigen Verweisen', ()
 test('Marketing-Dateien vorhanden (QR-Karte, Google-Texte, Ads)', () => {
   for (const f of ['marketing/bewertungskarte-A6.png', 'marketing/bewertungs-qr.png', 'docs/GOOGLE-PROFIL.md', 'docs/GOOGLE-ADS.md', 'docs/SEO.md']) assert.ok(fs.existsSync(f), f);
   assert.ok(fs.existsSync('src/app/bewerten/route.ts'));
+});
+
+test('Marken-Sektion: genau die sieben genannten Marken, keine Logo-Dateien', () => {
+  assert.deepEqual([...BRANDS], ['BMW', 'Chevrolet', 'Ford', 'Lamborghini', 'Mercedes-Benz / AMG', 'Porsche', 'Range Rover']);
+  assert.ok(!fs.readdirSync('public').some((f) => /bmw|porsche|mercedes|ford|chevrolet|lamborghini|range/i.test(f)), 'keine Herstellerlogos im Repo');
 });
